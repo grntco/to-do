@@ -4,9 +4,10 @@ class Task {
     constructor(_title, _description, _dueDate, _priority, _project) {
         this.title = _title;
         this.description = _description;
-        this.dueDate = _dueDate;
         this.priority = _priority;
         this.project = _project;
+        this.dueDate = new Date(_dueDate.split('-').join(', '));
+        this.completed = false;
     }
 
     add() {
@@ -17,6 +18,10 @@ class Task {
         let index = allTasks.findIndex((task) => task === this);
         allTasks.splice(index, 1);
     };
+
+    markComplete() {
+        this.completed = true;
+    }
 }
 
 // This is needed for displaying project names on DOM, otherwise it has no use
@@ -38,13 +43,14 @@ class Project {
     }
 }
 
-// const newTask = new Task('Write book', 'At least 50 pages', 'June 1, 2023', 'High', 'Gym');
-// newTask.add();
-// const newTask2 = new Task('Write blog', 'At least 50 words', 'June 3, 2023', 'Medium', 'Work');
-// newTask2.add();
-// const newTask3 = new Task('Do pullups', 'Aim for 10', 'June 5, 2023', 'Low');
-// newTask3.add();
+const newTask = new Task('Write book', 'At least 50 pages', '2023-6-1', 'High', 'Gym');
+newTask.add();
+const newTask2 = new Task('Write blog', 'At least 50 words', '2023-6-1', 'Medium', 'Work');
+newTask2.add();
+const newTask3 = new Task('Do pullups', 'Aim for 10', '2023-11-1', 'Low');
+newTask3.add();
 
 const inbox = allTasks.filter((task) => task.project === undefined);
+// const todayTasks = allTasks.filter((task) => task.dueDate.isNow())
 
 export { allTasks, Task, allProjects, Project, inbox }
