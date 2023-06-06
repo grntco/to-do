@@ -160,13 +160,15 @@ nav button:hover {
     border-bottom: 1px solid var(--primary-border-color);
 }
 
-/* Main View Content */
+
 .main-container {
     height: 100%;
     width: 100%;
     display: grid;
     grid-template-columns: 1fr 6fr;
 }
+
+/* Main View Content */
 
 .view-container {
     padding: 48px;
@@ -175,6 +177,8 @@ nav button:hover {
     align-items: start;
     width: 100%;
     gap: 8px;
+    position: relative; /* For add-task-overlay */
+    /* filter: blur(2px); */
 }
 
 .tasks-container {
@@ -214,6 +218,8 @@ nav button:hover {
     display: flex;
     flex-direction: column;
     gap: 4px;
+    border-left: 4px solid var(--primary-border-color);
+    padding-left: 8px;
 }
 
 .task-description {
@@ -268,6 +274,96 @@ nav button:hover {
 }
 
 #add-task-btn:hover {
+    color: var(--primary-txt-color);
+    cursor: pointer;
+}
+
+/* .add-task-overlay {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    background-color: var(--secondary-bg-color);
+    opacity: 0.3;
+} */
+
+.add-task-form-container {
+    border: 1px solid var(--primary-border-color);
+    border-radius: 4px;
+    width: 100%;
+    padding: 24px;
+}
+
+.add-task-form-container form {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.task-info-input-container {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.task-info-input-container input[type="text"] {
+    outline: none;
+    border: none;
+    background: none;
+    font-size: 1rem;
+    color: var(--primary-txt-color);
+}
+
+/* .task-info-input-container input[type="text"]::placeholder:hover {
+    cursor: text;
+} */
+
+.task-info-input-container input[type="text"]::placeholder {
+    color: var(--secondary-txt-color);
+}
+
+.textarea {
+    outline: none;
+    display: flex;
+    flex-wrap: wrap;
+    word-break: break-all;
+    overflow: hidden;
+    resize: none;
+    min-height: 40px;
+    line-height: 20px;
+    font-size: 0.8rem;
+    color: var(--primary-txt-color);
+    font-family: var(--primary-font);
+}
+
+.textarea[contenteditable]:empty::before {
+    content: "Task description";
+    color: var(--secondary-txt-color);
+    font-size: 0.8rem;
+    font-family: var(--primary-font);
+}
+
+.add-task-form-container .btns-container {
+    /* border: 1px solid red; */
+    display: flex;
+    justify-content: end;
+    gap: 8px;
+}
+
+.add-task-form-container .btns-container button {
+    padding: 4px 8px;
+    border-radius: 4px;
+    font-size: 1rem;
+    font-family: var(--primary-font);
+    font-weight: 500;
+    border: 1px solid var(--primary-border-color);
+    background-color: var(--secondary-bg-color);
+    color: var(--secondary-txt-color);
+}
+
+.add-task-form-container .btns-container button:hover {
+    background-color: var(--hover-bg-color);
     color: var(--primary-txt-color);
     cursor: pointer;
 }
