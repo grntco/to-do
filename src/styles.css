@@ -22,6 +22,15 @@
     --low-priority-txt-color: #22c55e;
 }
 
+.dark-mode {
+    --primary-bg-color: #111827;
+    --secondary-bg-color: #030712;
+    --hover-bg-color: #374151;
+    --primary-txt-color: #f9fafb;
+    --secondary-txt-color: #9ca3af;
+    --primary-border-color: #374151;
+}
+
 body {
     font-family: var(--primary-font);
     font-size: 16px;
@@ -54,7 +63,7 @@ nav {
     gap: 16px;
     height: 4rem;
     background-color: var(--secondary-bg-color);
-    border: 1px solid var(--primary-border-color);
+    border-bottom: 1px solid var(--primary-border-color);
 }
 
 .nav-right, .nav-left {
