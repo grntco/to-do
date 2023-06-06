@@ -1,34 +1,111 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v6.0.0/css/all.css"
+    />
     <title>To Do</title>
-</head>
-<body>
+  </head>
+  <body>
     <script src="./bundle.js" defer></script>
     <div id="content">
-        <nav></nav>
-        <section class="main-container">
-            <div class="sidebar">
-
+      <nav>
+        <div class="nav-right">
+            <button><i class="fa-solid fa-bars"></i></button>
+            <button><i class="fa-solid fa-house"></i></button>
+        </div>
+        <h1>Todoit</h1>
+        <div class="nav-left">
+            <button><i class="fa-regular fa-moon"></i></button>
+            <img src="./profile_lofi_generator profile < 1MB.png" alt="">
+        </div>
+      </nav>
+      <section class="main-container">
+        <div class="sidebar">
+          <div>
+            <div class="sb-btn-container">
+              <button class="sb-btn">
+                <i class="fa-solid fa-inbox"></i>Inbox<span>10</span>
+              </button>
+              <button class="sb-btn">
+                <i class="fa-solid fa-calendar-day"></i>Today<span>3</span>
+              </button>
+              <button class="sb-btn">
+                <i class="fa-solid fa-calendar-week"></i>This Week<span></span>
+              </button>
             </div>
-            <div class="view-container">
-                <h2 id="view-name">Today</h2>
-                <div class="task">
-                    <h3 class="task-name">Write book</h3>
-                    <div class="priority"></div>
-                    <div class="project"></div>
-                    <div class="due-date"></div>
-                    <button>O</button>
-                    <p class="description"></p>
+          </div>
+          <div>
+            <h3 class="sb-projects-heading">Projects</h3>
+            <div class="sb-btn-container">
+              <button class="sb-btn"><i class="fa-solid fa-list-check"></i>Work<span>2</span></button>
+              <button class="sb-btn"><i class="fa-solid fa-list-check"></i>Book<span>1</span></button>
+              <button class="sb-btn"><i class="fa-solid fa-list-check"></i>Gym<span>1</span></button>
+            </div>
+          </div>
+        </div>
+        <div class="view-container">
+          <h2 id="view-name">Today</h2>
+          <div class="tasks-container">
+            <div class="task">
+              <button class="complete-task-btn">
+                <i class="fa-regular fa-circle"></i>
+              </button>
+              <div class="task-info">
+                <div class="task-name">Do pull ups</div>
+                <div class="task-description">3 sets of 10 each.</div>
+              </div>
+              <ul class="meta-tag-container">
+                <li class="meta-tag low-priority">Low</li>
+                <li class="meta-tag project">Gym</li>
+                <li class="meta-tag due-date">June 6, 2023</li>
+              </ul>
+            </div>
+            <div class="task">
+              <button class="complete-task-btn">
+                <i class="fa-regular fa-circle"></i>
+              </button>
+              <div class="task-info">
+                <div class="task-name">Clock 8 hours</div>
+                <div class="task-description">
+                  Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                  Atque eos culpa incidunt dolore natus modi voluptate quae
+                  veritatis dolores facilis dolorem dicta inventore, architecto
+                  possimus.
                 </div>
-                <button id="add-task">
-                    Add Task
-                </button>
+              </div>
+              <ul class="meta-tag-container">
+                <li class="meta-tag med-priority">Medium</li>
+                <li class="meta-tag project">Work</li>
+                <li class="meta-tag due-date">June 6, 2023</li>
+              </ul>
             </div>
-        </section>
+            <div class="task">
+              <button class="complete-task-btn">
+                <i class="fa-regular fa-circle"></i>
+              </button>
+              <div class="task-info">
+                <div class="task-name">Do pull ups</div>
+                <div class="task-description">
+                  Lorem, ipsum dolor sit amet consectetur.
+                </div>
+              </div>
+              <ul class="meta-tag-container">
+                <li class="meta-tag high-priority">High</li>
+                <li class="meta-tag project">Gym</li>
+                <li class="meta-tag due-date">June 6, 2023</li>
+              </ul>
+            </div>
+          </div>
+          <button id="add-task-btn">
+            <i class="fa-solid fa-plus"></i>Add Task
+          </button>
+        </div>
+      </section>
     </div>
-</body>
+  </body>
 </html>
