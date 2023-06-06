@@ -10,7 +10,7 @@
     />
     <title>To Do</title>
   </head>
-  <body class="dark-mode">
+  <body>
     <script src="./bundle.js" defer></script>
     <div id="content">
       <nav>
@@ -101,9 +101,37 @@
               </ul>
             </div>
           </div>
+          <div class="add-task-form-container">
+            <form action="">
+              <div class="task-info-input-container">
+                <input type="text" name="name-input" id="name-input" autocomplete="off" placeholder="Task name"/>
+                <div><span class="textarea" role="textbox" contenteditable></span></div>
+              </div>
+              <div class="meta-input-container">
+                <select name="project-input" id="project-input">
+                  <option selected disabled>Project</option>
+                  <option value="Work">Work</option>
+                  <option value="Book">Book</option>
+                  <option value="Gym">Gym</option>
+                </select>
+                <select name="project-input" id="project-input">
+                  <option selected disabled>Priority</option>
+                  <option value="high">High</option>
+                  <option value="medium">Medium</option>
+                  <option value="low">Low</option>
+                </select>
+                <input type="date" name="due-date-input" id="due-date-input" />
+              </div>
+            </form>
+            <div class="btns-container">
+              <button>Cancel</button>
+              <button>Add Task</button>
+            </div>
+          </div>
           <button id="add-task-btn">
             <i class="fa-solid fa-plus"></i>Add Task
           </button>
+
         </div>
       </section>
     </div>
