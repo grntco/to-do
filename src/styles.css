@@ -25,10 +25,10 @@
 .dark-mode {
     --primary-bg-color: #111827;
     --secondary-bg-color: #030712;
-    --hover-bg-color: #374151;
+    --hover-bg-color: #1f2937;
     --primary-txt-color: #f9fafb;
     --secondary-txt-color: #9ca3af;
-    --primary-border-color: #374151;
+    --primary-border-color: #1f2937;
 }
 
 body {
