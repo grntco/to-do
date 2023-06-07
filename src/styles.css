@@ -20,6 +20,11 @@
     --med-priority-txt-color: #eab308;
     --low-priority-bg-color: #bbf7d0;
     --low-priority-txt-color: #22c55e;
+    /* Add task button colors */
+    --accent-bg-color: #bfdbfe;
+    --accent-txt-color: #3b82f6;
+    --accent-hover-bg-color: #93c5fd;
+    --accent-hover-txt-color: #2563eb;
 }
 
 .dark-mode {
@@ -344,6 +349,34 @@ nav button:hover {
     font-family: var(--primary-font);
 }
 
+.meta-input-container {
+    display: flex;
+    gap: 8px;
+}
+
+.meta-input-container select, .meta-input-container input[type="date"] {
+    outline: none;
+    border: none;
+    font-family: var(--primary-font);
+    font-size: 1rem;
+    padding: 2px 4px;
+    border-radius: 4px;
+    font-weight: 500;
+    background-color: var(--secondary-bg-color);
+    color: var(--secondary-txt-color);
+}
+
+.meta-input-container select:focus, .meta-input-container input[type="date"]:focus {
+    background-color: var(--hover-bg-color);
+    color: var(--primary-txt-color);
+}
+
+.add-task-form-container {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
 .add-task-form-container .btns-container {
     /* border: 1px solid red; */
     display: flex;
@@ -366,4 +399,14 @@ nav button:hover {
     background-color: var(--hover-bg-color);
     color: var(--primary-txt-color);
     cursor: pointer;
+}
+
+.add-task-form-container #create-task-btn {
+    background-color: var(--accent-bg-color);
+    color: var(--accent-txt-color);
+}
+
+.add-task-form-container #create-task-btn:hover {
+    background-color: var(--accent-hover-bg-color);
+    color: var(--accent-hover-txt-color);
 }
