@@ -280,38 +280,18 @@ nav button:hover {
     cursor: pointer;
 }
 
-/* .add-task-overlay {
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    right: 0;
-    left: 0;
-    background-color: var(--secondary-bg-color);
-    opacity: 0.3;
-} */
+/* FORMS AND MODALS */
 
-/* change 'add' below to 'new' to avoid confusion with btns */
+/* All forms */
 
-.add-task-form-container {
-    border: 1px solid var(--primary-border-color);
-    border-radius: 4px;
-    width: 100%;
-    padding: 24px;
-}
-
-.add-task-form-container form {
+form fieldset {
+    border: none;
     display: flex;
     flex-direction: column;
     gap: 4px;
 }
 
-.task-info-input-container {
-    display: flex;
-    flex-direction: column;
-    gap: 4px;
-}
-
-input[type="text"] {
+form input[type="text"] {
     outline: none;
     border: none;
     background: none;
@@ -319,15 +299,11 @@ input[type="text"] {
     color: var(--primary-txt-color);
 }
 
-/* .task-info-input-container input[type="text"]::placeholder:hover {
-    cursor: text;
-} */
-
-input[type="text"]::placeholder {
+form input[type="text"]::placeholder {
     color: var(--secondary-txt-color);
 }
 
-.textarea {
+form .textarea {
     outline: none;
     display: flex;
     flex-wrap: wrap;
@@ -341,76 +317,108 @@ input[type="text"]::placeholder {
     font-family: var(--primary-font);
 }
 
-.textarea[contenteditable]:empty::before {
+form .textarea[contenteditable]:empty::before {
     content: "Task description";
     color: var(--secondary-txt-color);
     font-size: 0.8rem;
     font-family: var(--primary-font);
 }
 
-.meta-input-container {
-    display: flex;
-    gap: 8px;
-}
-
-.meta-input-container select, .meta-input-container input[type="date"] {
+form select, form input[type="date"] {
     outline: none;
     border: none;
     font-family: var(--primary-font);
     font-size: 1rem;
-    padding: 2px 4px;
     border-radius: 4px;
     font-weight: 500;
     background-color: var(--secondary-bg-color);
     color: var(--secondary-txt-color);
 }
 
-.meta-input-container select:focus, .meta-input-container input[type="date"]:focus {
+form select {
+    padding: 2px 4px;
+}
+
+form input[type="date"] {
+    padding: 4px 6px;
+}
+
+form select:focus, form input[type="date"]:focus {
     background-color: var(--hover-bg-color);
     color: var(--primary-txt-color);
 }
 
-.add-task-form-container {
-    display: flex;
-    flex-direction: column;
-    gap: 8px;
-}
-
-.add-task-form-container .btns-container {
-    /* border: 1px solid red; */
+form .btns-container {
     display: flex;
     justify-content: end;
     gap: 8px;
+    margin-top: auto;
+    /* margin-left: auto; */
 }
 
-.add-task-form-container .btns-container button {
+form .btns-container button {
     padding: 4px 8px;
     border-radius: 4px;
     font-size: 1rem;
     font-family: var(--primary-font);
     font-weight: 500;
     border: 1px solid var(--primary-border-color);
+}
+
+form .cancel-btn {
     background-color: var(--secondary-bg-color);
     color: var(--secondary-txt-color);
 }
 
-.add-task-form-container .btns-container button:hover {
+form .cancel-btn:hover {
     background-color: var(--hover-bg-color);
     color: var(--primary-txt-color);
     cursor: pointer;
 }
 
-.add-task-form-container #create-task-btn {
+form .create-btn {
     background-color: var(--accent-bg-color);
     color: var(--accent-txt-color);
 }
 
-.add-task-form-container #create-task-btn:hover {
+form .create-btn:hover {
     background-color: var(--accent-hover-bg-color);
     color: var(--accent-hover-txt-color);
+    cursor: pointer;
 }
 
-/* new Project Modal */
+/* New task form */
+
+.new-task-form-container {
+    border: 1px solid var(--primary-border-color);
+    border-radius: 4px;
+    width: 100%;
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.new-task-form-container form {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.new-task-form-container form .meta-input-container {
+    flex-direction: row;
+    gap: 8px;
+}
+
+/* .new-task-form-container form .meta-input-container > * {
+    width: max-content;
+} */
+
+.new-task-form-container form .btns-container {
+    margin-right: auto;
+}
+
+/* Modals */
 .modal {
     position: absolute;
     top: 0;
@@ -438,49 +446,3 @@ input[type="text"]::placeholder {
     padding-bottom: 8px;
     border-bottom: 1px solid var(--primary-border-color);
 }
-
-.modal form fieldset {
-    border: none;
-    display: flex;
-    flex-direction: column;
-    gap: 4px;
-}
-
-.modal form .btns-container {
-    display: flex;
-    justify-content: end;
-    gap: 8px;
-    margin-top: auto;
-}
-
-form .btns-container button {
-    padding: 4px 8px;
-    border-radius: 4px;
-    font-size: 1rem;
-    font-family: var(--primary-font);
-    font-weight: 500;
-    border: 1px solid var(--primary-border-color);
-}
-
-.cancel-btn {
-    background-color: var(--secondary-bg-color);
-    color: var(--secondary-txt-color);
-}
-
-.cancel-btn:hover {
-    background-color: var(--hover-bg-color);
-    color: var(--primary-txt-color);
-    cursor: pointer;
-}
-
-.create-btn {
-    background-color: var(--accent-bg-color);
-    color: var(--accent-txt-color);
-}
-
-.create-btn:hover {
-    background-color: var(--accent-hover-bg-color);
-    color: var(--accent-hover-txt-color);
-    cursor: pointer;
-}
-
