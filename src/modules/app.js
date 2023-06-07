@@ -41,6 +41,8 @@ class Project {
         let index = allProjects.findIndex((project) => project === this);
         allProjects.splice(index, 1);
     }
+
+    // getTasks() {}
 }
 
 const newTask = new Task('Write book', 'At least 50 pages', '2023-6-1', 'High', 'Gym');

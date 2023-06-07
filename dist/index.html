@@ -12,14 +12,11 @@
   </head>
   <body>
     <script src="./bundle.js" defer></script>
-    <div id="content">
+    <div id="content" class="modal-active">
       <nav>
-        <div class="nav-right">
-            <button><i class="fa-solid fa-bars"></i></button>
-            <button><i class="fa-solid fa-house"></i></button>
-        </div>
+        <button><i class="fa-solid fa-bars"></i></button>
         <h1>Todoit</h1>
-        <div class="nav-left">
+        <div class="nav-left-container">
             <button><i class="fa-regular fa-moon"></i></button>
             <img src="./profile_lofi_generator profile < 1MB.png" alt="">
         </div>
@@ -132,7 +129,24 @@
             <i class="fa-solid fa-plus"></i>Add Task
           </button>
 
+          <div class="edit-task-modal">
+            
+          </div>
+          <div class="new-project-modal modal">
+            <form action="">
+              <h3>New Project</h3>
+              <fieldset>
+                <input type="text" name="project-name-input" id="project-name-input" placeholder="Project name"/>
+                <div><span class="textarea" role="textbox" contenteditable></span></div>
+              </fieldset>
+              <div class="btns-container">
+                <button class="cancel-btn">Cancel</button>
+                <button class="create-btn" id="create-task-btn">Create Project</button>
+              </div>
+            </form>
+          </div>
         </div>
+
       </section>
     </div>
   </body>
