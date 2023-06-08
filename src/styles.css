@@ -36,6 +36,8 @@
     --primary-border-color: #1f2937;
 }
 
+/* Generic system styles */
+
 body {
     font-family: var(--primary-font);
     font-size: 16px;
@@ -55,21 +57,27 @@ h3 {
     font-size: 1.2rem;
 }
 
-.icon-btn {
-    font-size: 1.2rem;
-    padding: 4px;
-    border-radius: 4px;
+button {
     border: none;
-    background: none;
-    display: flex;
-    align-items: center;
+    font-family: var(--primary-font);
+    font-weight: 500;
+    font-size: 1rem;
+    border-radius: 4px;
+    background-color: var(--secondary-bg-color);
     color: var(--secondary-txt-color);
 }
 
-.icon-btn:hover {
+button:hover {
     background-color: var(--hover-bg-color);
     color: var(--primary-txt-color);
     cursor: pointer;
+}
+
+.icon-btn {
+    font-size: 1.2rem;
+    padding: 4px;
+    display: flex;
+    align-items: center;
 }
 
 #content {
@@ -77,6 +85,8 @@ h3 {
     flex-direction: column;
     height: 100vh;
 }
+
+/* Nav Bar */
 
 nav {
     display: flex;
@@ -88,7 +98,7 @@ nav {
     border-bottom: 1px solid var(--primary-border-color);
 }
 
-.nav-left-container {
+nav .left-container {
     display: flex;
     align-items: center;
     gap: 8px;
@@ -98,6 +108,15 @@ nav {
 nav img {
     height: 2.2rem;
     border-radius: 50%;
+}
+
+/* Main Container */
+
+.main-container {
+    height: 100%;
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 6fr;
 }
 
 /* Sidebar */
@@ -124,50 +143,29 @@ nav img {
     gap: 8px;
 }
 
-.sb-btn {
+.sidebar .btns-container button {
     font-size: 1.2rem;
     padding: 4px 8px;
-    border-radius: 4px;
-    border: none;
-    background: none;
     text-align: left;
-    color: var(--secondary-txt-color);
     display: flex;
     align-items: center;
     gap: 8px;
 }
 
-.sb-btn i {
-    padding-bottom: 2px;
-}
-
-.sb-btn span {
+.sidebar .btns-container button span {
     font-size: 0.8rem;
     margin-left: auto;
 }
 
-.sb-btn:hover {
-    background-color: var(--hover-bg-color);
-    color: var(--primary-txt-color);
-    cursor: pointer;
-}
-
-.sb-projects-heading {
+.sidebar .projects-heading {
     display: flex;
     flex-direction: row;
     padding-bottom: 8px;
     border-bottom: 1px solid var(--primary-border-color);
 }
 
-.sb-projects-heading .icon-btn {
+.sidebar .projects-heading .icon-btn { /* Probs change to id here since only one */
     margin-left: auto;
-}
-
-.main-container {
-    height: 100%;
-    width: 100%;
-    display: grid;
-    grid-template-columns: 1fr 6fr;
 }
 
 /* Main View Content */
@@ -201,19 +199,8 @@ nav img {
     cursor: pointer;
 }
 
-.complete-task-btn {
+.complete-task-btn, .complete-task-btn:hover  {
     background: none;
-    border: none;
-}
-
-.fa-regular.fa-circle {
-    font-size: 1rem;
-    color: var(--secondary-txt-color);
-}
-
-.fa-regular.fa-circle:hover {
-    color: var(--primary-txt-color);
-    cursor: pointer;
 }
 
 .task-info {
@@ -263,21 +250,11 @@ nav img {
 }
 
 #add-task-btn {
+    padding: 4px 8px;
+    background: none;
     display: flex;
     gap: 4px;
     align-items: center;
-    border: none;
-    background: none;
-    padding: 4px 8px;
-    border-radius: 4px;
-    font-size: 1rem;
-    font-family: var(--primary-font);
-    color: var(--secondary-txt-color);
-}
-
-#add-task-btn:hover {
-    color: var(--primary-txt-color);
-    cursor: pointer;
 }
 
 /* FORMS AND MODALS */
@@ -364,22 +341,7 @@ form .btns-container {
 
 form .btns-container button {
     padding: 4px 8px;
-    border-radius: 4px;
-    font-size: 1rem;
-    font-family: var(--primary-font);
-    font-weight: 500;
     border: 1px solid var(--primary-border-color);
-}
-
-form .cancel-btn {
-    background-color: var(--secondary-bg-color);
-    color: var(--secondary-txt-color);
-}
-
-form .cancel-btn:hover {
-    background-color: var(--hover-bg-color);
-    color: var(--primary-txt-color);
-    cursor: pointer;
 }
 
 form .create-btn {
@@ -390,7 +352,6 @@ form .create-btn {
 form .create-btn:hover {
     background-color: var(--accent-hover-bg-color);
     color: var(--accent-hover-txt-color);
-    cursor: pointer;
 }
 
 /* New task form */
