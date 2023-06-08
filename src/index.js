@@ -5,6 +5,9 @@ console.log(allTasks);
 console.log(inbox);
 
 
+const newProject = new Project ('Gym', 'Things to fill 8 hours with');
+
+console.log(newProject.getTasks());
 // newTask2.delete();
 // console.log(allTasks);
 
