@@ -14,17 +14,17 @@
     <script src="./bundle.js" defer></script>
     <div id="content" class="modal-active">
       <nav>
-        <button><i class="fa-solid fa-bars"></i></button>
+        <button class="icon-btn"><i class="fa-solid fa-bars"></i></button>
         <h1>Todoit</h1>
         <div class="nav-left-container">
-            <button><i class="fa-regular fa-moon"></i></button>
+            <button class="icon-btn"><i class="fa-regular fa-moon"></i></button>
             <img src="./profile_lofi_generator profile < 1MB.png" alt="">
         </div>
       </nav>
       <section class="main-container">
         <div class="sidebar">
-          <div>
-            <div class="sb-btn-container">
+          <div class="view-list-container">
+            <div class="btns-container">
               <button class="sb-btn">
                 <i class="fa-solid fa-inbox"></i>Inbox<span>10</span>
               </button>
@@ -36,9 +36,14 @@
               </button>
             </div>
           </div>
-          <div>
-            <h3 class="sb-projects-heading">Projects</h3>
-            <div class="sb-btn-container">
+          <div class="view-list-container">
+            <div class="sb-projects-heading">
+              <h3>Projects</h3>
+              <button class="icon-btn">
+                <i class="fa-solid fa-plus"></i>
+              </button>
+            </div>
+            <div class="btns-container">
               <button class="sb-btn"><i class="fa-solid fa-list-check"></i>Work<span>2</span></button>
               <button class="sb-btn"><i class="fa-solid fa-list-check"></i>Book<span>1</span></button>
               <button class="sb-btn"><i class="fa-solid fa-list-check"></i>Gym<span>1</span></button>
@@ -157,6 +162,7 @@
               </div>
             </form>
           </div> -->
+
           <!-- <div class="new-project-modal modal">
             <form action="">
               <h3>New Project</h3>
@@ -170,6 +176,7 @@
               </div>
             </form>
           </div> -->
+
         </div>
 
       </section>

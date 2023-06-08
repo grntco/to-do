@@ -55,6 +55,23 @@ h3 {
     font-size: 1.2rem;
 }
 
+.icon-btn {
+    font-size: 1.2rem;
+    padding: 4px;
+    border-radius: 4px;
+    border: none;
+    background: none;
+    display: flex;
+    align-items: center;
+    color: var(--secondary-txt-color);
+}
+
+.icon-btn:hover {
+    background-color: var(--hover-bg-color);
+    color: var(--primary-txt-color);
+    cursor: pointer;
+}
+
 #content {
     display: flex;
     flex-direction: column;
@@ -78,31 +95,9 @@ nav {
     margin-left: auto;
 }
 
-nav button {
-    font-size: 1.2rem;
-    padding: 4px;
-    border-radius: 4px;
-    border: none;
-    background: none;
-    display: flex;
-    align-items: center;
-    color: var(--secondary-txt-color);
-}
-
-
-nav button i {
-    /* font-size: 1.2rem; */
-}
-
 nav img {
     height: 2.2rem;
     border-radius: 50%;
-}
-
-nav button:hover {
-    background-color: var(--hover-bg-color);
-    color: var(--primary-txt-color);
-    cursor: pointer;
 }
 
 /* Sidebar */
@@ -117,13 +112,13 @@ nav button:hover {
     background-color: var(--secondary-bg-color);
 }
 
-.sidebar div {
+.sidebar .view-list-container {
     display: flex;
     flex-direction: column;
     gap: 8px;
 }
 
-.sb-btn-container {
+.sidebar .btns-container {
     display: flex;
     flex-direction: column;
     gap: 8px;
@@ -158,10 +153,15 @@ nav button:hover {
 }
 
 .sb-projects-heading {
+    display: flex;
+    flex-direction: row;
     padding-bottom: 8px;
     border-bottom: 1px solid var(--primary-border-color);
 }
 
+.sb-projects-heading .icon-btn {
+    margin-left: auto;
+}
 
 .main-container {
     height: 100%;
@@ -436,7 +436,7 @@ form .create-btn:hover {
     padding: 24px;
     border-radius: 4px;
     width: 336px;
-    /* min-height: 336px; */
+    min-height: 240px;
     background-color: var(--primary-bg-color);
     border: 1px solid var(--primary-border-color);
 }
