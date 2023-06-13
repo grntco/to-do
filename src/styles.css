@@ -80,7 +80,7 @@ button:hover {
     align-items: center;
 }
 
-#content {
+#app {
     display: flex;
     flex-direction: column;
     height: 100vh;

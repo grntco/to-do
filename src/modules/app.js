@@ -53,7 +53,7 @@ const newTask = new Task('Write book', 'At least 50 pages', '2023-6-1', 'High', 
 newTask.add();
 const newTask2 = new Task('Write blog', 'At least 50 words', '2023-6-1', 'Medium', 'Work');
 newTask2.add();
-const newTask3 = new Task('Do pullups', 'Aim for 10', '2023-11-1', 'Low', 'Work');
+const newTask3 = new Task('Do pullups', 'Aim for 10', '2023-11-1', 'Low');
 newTask3.add();
 
 const inbox = allTasks.filter((task) => task.project === undefined);
