@@ -115,8 +115,7 @@ nav img {
 .main-container {
     height: 100%;
     width: 100%;
-    display: grid;
-    grid-template-columns: 1fr 6fr;
+    display: flex;
 }
 
 /* Sidebar */
@@ -130,6 +129,11 @@ nav img {
     min-width: 336px;
     background-color: var(--secondary-bg-color);
 }
+
+/* .collapse {
+    position: absolute;
+    left: -336px;
+} */
 
 .sidebar .view-list-container {
     display: flex;
