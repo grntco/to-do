@@ -130,10 +130,10 @@ nav img {
     background-color: var(--secondary-bg-color);
 }
 
-/* .collapse {
+.collapse {
     position: absolute;
     left: -336px;
-} */
+}
 
 .sidebar .view-list-container {
     display: flex;

@@ -1,5 +1,9 @@
 import './styles.css';
 import { allTasks, Task, allProjects, Project, inbox } from './modules/app';
+import createSidebar from './modules/sidebar';
+
+
+createSidebar().toggle();
 
 console.log(allTasks);
 console.log(inbox);
