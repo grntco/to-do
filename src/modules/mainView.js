@@ -2,6 +2,30 @@ const d = document;
 
 const app = d.getElementById('app');
 
+function createNav() {
+    const nav = app.insertBefore(d.createElement('nav'), mainContainer);
+
+    const sidebarBtn = nav.appendChild(d.createElement('button'));
+    sidebarBtn.classList.add('icon-btn');
+    sidebarBtn.innerHTML = `<i class="fa-solid fa-bars"></i>`;
+
+    const h1 = nav.appendChild(d.createElement('h1'));
+    h1.textContent = 'Todoit';
+
+    const leftContainer = nav.appendChild(d.createElement('div'));
+    leftContainer.classList.add('left-container');
+
+    const themeBtn = leftContainer.appendChild(d.createElement('button'));
+    themeBtn.classList.add('icon-btn');
+    themeBtn.innerHTML = `<i class="fa-regular fa-moon"></i>`;
+
+    const profileImg = leftContainer.appendChild(d.createElement('img'));
+    profileImg.src = './profile_lofi_generator profile < 1MB.png';
+    profileImg.alt = 'profile image';
+
+    return nav;
+}
+
 const mainContainer = app.appendChild(d.createElement('section'));
 mainContainer.classList.add('main-container');
 
@@ -76,4 +100,4 @@ function createViewContainer(view) {
 }
 
 
-export { d, mainContainer, createViewContainer };
+export { d, mainContainer, createNav, createViewContainer };

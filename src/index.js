@@ -1,13 +1,15 @@
 import './styles.css';
 import { allTasks, Task, allProjects, Project, inbox } from './modules/app';
 import createSidebar from './modules/sidebar';
-import { createViewContainer } from './modules/mainView';
+import { createNav, createViewContainer } from './modules/mainView';
 
 
 const newProject = new Project ('Gym', 'Things to fill 8 hours with');
 
 console.log(newProject.getTasks());
 
+
+createNav();
 createSidebar();
 createViewContainer(newProject);
 
