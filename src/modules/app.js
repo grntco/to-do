@@ -30,7 +30,26 @@ class TasksView {
     }
 }
 
+const inboxView = new TasksView('Inbox');
+inboxView.getTasks = function() {
+    return allTasks.filter((task) => task.project === undefined);
+}
+
+const todayView = new TasksView('Today');
+// todayView.getTasks = function() {
+//     return the tasks that are due today
+// }
+// Something like return  allTasks.filter((task) => task.dueDate.isNow())
+
+
+const weekView = new TasksView('Week');
+// weekView.getTasks = function() {
+//     return the tasks that are due up to seven days from the current date
+// }
+
+
 // This is needed for displaying project names on DOM, otherwise it has no use
+// May be a better way to do this through localStorage?
 const allProjects = [];
 
 class Project extends TasksView {
@@ -56,28 +75,14 @@ class Project extends TasksView {
 const newProject = new Project('Gym', 'Get swole');
 newProject.add();
 
-const inboxView = new TasksView('Inbox');
-inboxView.getTasks = function() {
-    return allTasks.filter((task) => task.project === undefined);
-}
-
-const todayView = new TasksView('Today');
-// todayView.getTasks = function() {
-//     return the tasks taht are due today
-// }
-
-const weekView = new TasksView('Week');
-// weekView.getTasks = function() {
-//     return the tasks that are due up to seven days from the current date
-// }
-
 const newTask = new Task('Write book', 'At least 50 pages', '2023-6-1', 'High', 'Gym');
 newTask.add();
 const newTask2 = new Task('Write blog', 'At least 50 words', '2023-6-1', 'Medium', 'Work');
 newTask2.add();
 const newTask3 = new Task('Do pullups', 'Aim for 10', '2023-11-1', 'Low', 'Gym');
 newTask3.add();
+const newTask4 = new Task('Do the thing', 'why do we do it', '2023-11-1', 'Low');
+newTask4.add();
 
-// const todayTasks = allTasks.filter((task) => task.dueDate.isNow())
 
-export { allTasks, Task, allProjects, Project, inboxView }
+export { allTasks, Task, inboxView, todayView, weekView, allProjects, Project, }
