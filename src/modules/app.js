@@ -24,13 +24,19 @@ class Task {
     }
 }
 
+class TasksView {
+    constructor(_title) {
+        this.title = _title;
+    }
+}
+
 // This is needed for displaying project names on DOM, otherwise it has no use
 const allProjects = [];
 
-class Project {
+class Project extends TasksView {
     constructor(_title, _description) {
-        this.title = _title;
-        this.description = _description;
+        super(_title);
+        this.description = _description
     }
 
     add() {
@@ -50,7 +56,20 @@ class Project {
 const newProject = new Project('Gym', 'Get swole');
 newProject.add();
 
+const inboxView = new TasksView('Inbox');
+inboxView.getTasks = function() {
+    return allTasks.filter((task) => task.project === undefined);
+}
 
+const todayView = new TasksView('Today');
+// todayView.getTasks = function() {
+//     return the tasks taht are due today
+// }
+
+const weekView = new TasksView('Week');
+// weekView.getTasks = function() {
+//     return the tasks that are due up to seven days from the current date
+// }
 
 const newTask = new Task('Write book', 'At least 50 pages', '2023-6-1', 'High', 'Gym');
 newTask.add();
@@ -59,7 +78,6 @@ newTask2.add();
 const newTask3 = new Task('Do pullups', 'Aim for 10', '2023-11-1', 'Low', 'Gym');
 newTask3.add();
 
-const inbox = allTasks.filter((task) => task.project === undefined);
 // const todayTasks = allTasks.filter((task) => task.dueDate.isNow())
 
-export { allTasks, Task, allProjects, Project, inbox }
+export { allTasks, Task, allProjects, Project, inboxView }

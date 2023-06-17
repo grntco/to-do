@@ -40,6 +40,7 @@ function createViewContainer(view) {
 
     const viewDescription = viewContainer.appendChild(d.createElement('p'));
     viewDescription.id = 'view-description'; //maybe don't need this...
+    // Some views don't have descriptions... so the next element wouldn't apply... if/else here
     viewDescription.textContent = view.description;
 
     const createTasksContainer = (function() {

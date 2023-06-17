@@ -1,5 +1,5 @@
 import './styles.css';
-import { allTasks, Task, allProjects, Project, inbox } from './modules/app';
+import { allTasks, Task, allProjects, Project, inboxView } from './modules/app';
 import createSidebar from './modules/sidebar';
 import { createNav, createViewContainer } from './modules/mainView';
 
@@ -16,10 +16,10 @@ createViewContainer(newProject);
 
 
 console.log(allTasks);
-console.log(inbox);
+console.log(inboxView);
 
 console.log(newProject.getTasks());
-console.log(inbox);
+console.log(inboxView);
 
 
 
