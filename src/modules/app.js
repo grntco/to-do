@@ -1,4 +1,4 @@
-import { format, isToday } from "date-fns";
+import { isToday, isAfter, isEqual, isBefore, addDays } from "date-fns";
 
 const allTasks = [];
 
@@ -45,9 +45,9 @@ todayView.getTasks = function() {
 
 
 const weekView = new TasksView('Week');
-// weekView.getTasks = function() {
-//     return the tasks that are due up to seven days from the current date
-// }
+weekView.getTasks = function() {
+    return allTasks.filter((task) => (isToday(task.dueDate) || isAfter(task.dueDate, new Date())) && isBefore(task.dueDate, addDays(new Date(), 6)));
+}
 
 
 // This is needed for displaying project names on DOM, otherwise it has no use
@@ -83,8 +83,10 @@ const newTask2 = new Task('Write blog', 'At least 50 words', '2023-6-1', 'Medium
 newTask2.add();
 const newTask3 = new Task('Do pullups', 'Aim for 10', '2023-6-20', 'Medium', 'Gym');
 newTask3.add();
-const newTask4 = new Task('Do the thing', 'why do we do it', '2023-6-20', 'Low');
+const newTask4 = new Task('Do the thing', 'why do we do it', '2023-6-21', 'Low');
 newTask4.add();
+const newTask5 = new Task('Do the thing', 'why do we do it', '2023-6-27', 'Medium');
+newTask5.add();
 
 
 export { allTasks, Task, inboxView, todayView, weekView, allProjects, Project, }

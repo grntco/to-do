@@ -23,7 +23,7 @@ export default function createSidebar() {
 
             const todayViewBtn = btnsContainer.appendChild(d.createElement('button'));
             todayViewBtn.id = 'today-view-btn';
-            todayViewBtn.innerHTML = `<i class="fa-solid fa-calendar-day"></i>Today<span>${0}</span>`
+            todayViewBtn.innerHTML = `<i class="fa-solid fa-calendar-day"></i>${todayView.title}<span>${todayView.getTasks().length}</span>`
             // Need todayView.length
 
             const weekViewBtn = btnsContainer.appendChild(d.createElement('button'));
