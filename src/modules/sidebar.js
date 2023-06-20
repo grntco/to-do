@@ -1,4 +1,4 @@
-import { allProjects } from "./app";
+import { allProjects, inboxView, todayView, weekView } from "./app";
 import { d, mainContainer } from "./mainView";
 // Also need inbox, today, and week views task numbers to display in the buttons
 // 
@@ -18,7 +18,7 @@ export default function createSidebar() {
 
             const inboxViewBtn = btnsContainer.appendChild(d.createElement('button'));
             inboxViewBtn.id = 'inbox-view-btn';
-            inboxViewBtn.innerHTML = `<i class="fa-solid fa-inbox"></i>Inbox<span>${0}</span>`
+            inboxViewBtn.innerHTML = `<i class="fa-solid fa-inbox"></i>${inboxView.title}<span>${inboxView.getTasks().length}</span>`
             // Need inboxView.length
 
             const todayViewBtn = btnsContainer.appendChild(d.createElement('button'));
