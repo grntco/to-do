@@ -27,7 +27,12 @@ const events = (function() {
             createViewContainer(weekView);
         }
 
-        // if (target.cl)
+        if (target.classList.contains('project-sb-btn')) {
+            const projectName = target.textContent.replace(/\d/g, '');
+            const projectObj = allProjects.find((project) => project.title = projectName);
+            removeViewContainer();
+            createViewContainer(projectObj);
+        }
 
         if (target.classList.contains('fa-bars')) {
             toggleSidebar();

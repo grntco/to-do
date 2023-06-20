@@ -56,6 +56,7 @@ export function createSidebar() {
 
             for (let i = 0; i < allProjects.length; i++) {
                 const btn = btnsContainer.appendChild(d.createElement('button'));
+                btn.classList.add('project-sb-btn');
                 btn.innerHTML = `<i class="fa-solid fa-list-check"></i>${allProjects[i].title}<span>${allProjects[i].getTasks().length}</span>`
             }
         })();
