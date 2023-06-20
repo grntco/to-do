@@ -1,3 +1,5 @@
+import { format } from "date-fns";
+
 const allTasks = [];
 
 class Task {
@@ -6,7 +8,7 @@ class Task {
         this.description = _description;
         this.priority = _priority;
         this.project = _project;
-        this.dueDate = new Date(_dueDate.split('-').join(', '));
+        this.dueDate = format(new Date(_dueDate.split('-')), 'PP');
         this.completed = false;
     }
 

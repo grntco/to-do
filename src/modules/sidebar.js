@@ -17,14 +17,17 @@ export default function createSidebar() {
             btnsContainer.classList.add('btns-container');
 
             const inboxViewBtn = btnsContainer.appendChild(d.createElement('button'));
+            inboxViewBtn.id = 'inbox-view-btn';
             inboxViewBtn.innerHTML = `<i class="fa-solid fa-inbox"></i>Inbox<span>${0}</span>`
             // Need inboxView.length
 
             const todayViewBtn = btnsContainer.appendChild(d.createElement('button'));
+            todayViewBtn.id = 'today-view-btn';
             todayViewBtn.innerHTML = `<i class="fa-solid fa-calendar-day"></i>Today<span>${0}</span>`
             // Need todayView.length
 
             const weekViewBtn = btnsContainer.appendChild(d.createElement('button'));
+            weekViewBtn.id = 'week-view-btn';
             weekViewBtn.innerHTML = `<i class="fa-solid fa-calendar-week"></i>Week<span>${0}</span>`;
             // Need weekView.length
 

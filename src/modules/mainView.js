@@ -31,6 +31,11 @@ mainContainer.classList.add('main-container');
 
 function createViewContainer(view) {
     // view is an object, such as a project, that contains the title, description, and tasks
+
+    // if (d.getElementById('view-container')) {
+    //     mainContainer.removeChild(d.getElementById('view-container'));
+    // }
+
     const viewContainer = mainContainer.appendChild(d.createElement('div'));
     viewContainer.classList.add('view-container');
 
