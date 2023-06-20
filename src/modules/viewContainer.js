@@ -1,13 +1,7 @@
 import format from "date-fns/format";
 import { d, mainContainer } from "./mainContainer";
 
-export default function createViewContainer(view) {
-    // view is an object, such as a project, that contains the title, description, and tasks
-
-    // if (d.getElementById('view-container')) {
-    //     mainContainer.removeChild(d.getElementById('view-container'));
-    // }
-
+export function createViewContainer(view) {
     const viewContainer = mainContainer.appendChild(d.createElement('div'));
     viewContainer.classList.add('view-container');
 
@@ -80,4 +74,8 @@ export default function createViewContainer(view) {
     addTaskBtn.innerHTML = `<i class="fa-solid fa-plus"></i>Add Task`;
 
     return viewContainer;
+}
+
+export function removeViewContainer() {
+    mainContainer.removeChild(d.querySelector('.view-container'));
 }

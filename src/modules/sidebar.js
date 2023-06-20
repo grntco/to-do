@@ -1,7 +1,7 @@
 import { allProjects, inboxView, todayView, weekView } from "./app";
 import { d, mainContainer } from "./mainContainer";
 
-export default function createSidebar() {
+export function createSidebar() {
 
     const sidebar = mainContainer.appendChild(d.createElement('div'));
     sidebar.classList.add('sidebar');
@@ -61,9 +61,9 @@ export default function createSidebar() {
         })();
     })();
 
-    const toggle = function() {
-        sidebar.classList.toggle('collapse');
-    }
-
     return sidebar;
+};
+
+export function toggleSidebar() {
+    d.querySelector('.sidebar').classList.toggle('collapse');
 };

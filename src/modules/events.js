@@ -1,9 +1,8 @@
-import { createViewContainer, d } from "./mainContainer";
+import { d } from "./mainContainer";
 import changeTheme from "./changeTheme";
-import createSidebar from "./sidebar";
-import { allTasks, Task, allProjects, Project, inboxView, todayView } from './app';
-// import { createViewContainer } from "./mainView";
-// import { inboxView } from "./app";
+import { createSidebar, toggleSidebar } from "./sidebar";
+import { createViewContainer, removeViewContainer } from "./viewContainer";
+import { allTasks, Task, allProjects, Project, inboxView, todayView, weekView } from './app';
 
 const events = (function() {
     d.addEventListener('click', function(e) {
@@ -13,21 +12,26 @@ const events = (function() {
             changeTheme();
         }
 
-        // if (target.id === ('inbox-view-btn')) {
-        //     createViewContainer(inboxView)
-        //     console.log('hello')
-        // }
+        if (target.id === ('inbox-view-btn')) {
+            removeViewContainer();
+            createViewContainer(inboxView)
+        }
 
-        // if (target.id === ('today-view-btn')) {
-        //     createViewContainer(todayView)
-        //     console.log('hello')
-        // }
+        if (target.id === ('today-view-btn')) {
+            removeViewContainer();
+            createViewContainer(todayView);
+        }
 
+        if (target.id === ('week-view-btn')) {
+            removeViewContainer();
+            createViewContainer(weekView);
+        }
 
+        // if (target.cl)
 
-        // if (target.classList.contains('fa-bars')) {
-        //     createSidebar().toggle();
-        // }
+        if (target.classList.contains('fa-bars')) {
+            toggleSidebar();
+        }
 
 
     })
