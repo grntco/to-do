@@ -1,4 +1,4 @@
-import { createViewContainer, d } from "./mainView";
+import { createViewContainer, d } from "./mainContainer";
 import changeTheme from "./changeTheme";
 import createSidebar from "./sidebar";
 import { allTasks, Task, allProjects, Project, inboxView, todayView } from './app';
