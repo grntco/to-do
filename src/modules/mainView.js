@@ -1,3 +1,5 @@
+import format from "date-fns/format";
+
 const d = document;
 
 const app = d.getElementById('app');
@@ -96,7 +98,7 @@ function createViewContainer(view) {
                     
                     const dueDateTag = metaContainer.appendChild(d.createElement('li'));
                     dueDateTag.classList.add('meta-tag');
-                    dueDateTag.textContent = taskObj.dueDate;
+                    dueDateTag.textContent = format(taskObj.dueDate, 'PP');
                 })();
             } 
         })();

@@ -1,4 +1,4 @@
-import { format } from "date-fns";
+import { format, isToday } from "date-fns";
 
 const allTasks = [];
 
@@ -8,7 +8,7 @@ class Task {
         this.description = _description;
         this.priority = _priority;
         this.project = _project;
-        this.dueDate = format(new Date(_dueDate.split('-')), 'PP');
+        this.dueDate = new Date(_dueDate.split('-'));
         this.completed = false;
     }
 
@@ -38,9 +38,9 @@ inboxView.getTasks = function() {
 }
 
 const todayView = new TasksView('Today');
-// todayView.getTasks = function() {
-//     return the tasks that are due today
-// }
+todayView.getTasks = function() {
+    return allTasks.filter((task) => isToday(task.dueDate))
+}
 // Something like return  allTasks.filter((task) => task.dueDate.isNow())
 
 
@@ -81,9 +81,9 @@ const newTask = new Task('Write book', 'At least 50 pages', '2023-6-1', 'High', 
 newTask.add();
 const newTask2 = new Task('Write blog', 'At least 50 words', '2023-6-1', 'Medium', 'Work');
 newTask2.add();
-const newTask3 = new Task('Do pullups', 'Aim for 10', '2023-11-1', 'Medium', 'Gym');
+const newTask3 = new Task('Do pullups', 'Aim for 10', '2023-6-20', 'Medium', 'Gym');
 newTask3.add();
-const newTask4 = new Task('Do the thing', 'why do we do it', '2023-11-1');
+const newTask4 = new Task('Do the thing', 'why do we do it', '2023-6-20', 'Low');
 newTask4.add();
 
 
