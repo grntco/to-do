@@ -1,7 +1,5 @@
 import { allProjects, inboxView, todayView, weekView } from "./app";
 import { d, mainContainer } from "./mainView";
-// Also need inbox, today, and week views task numbers to display in the buttons
-// 
 
 export default function createSidebar() {
 
