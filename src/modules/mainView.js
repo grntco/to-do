@@ -80,15 +80,19 @@ function createViewContainer(view) {
                 const createMetaContainer = (function() {
                     const metaContainer = taskCard.appendChild(d.createElement('ul'));
                     metaContainer.classList.add('meta-container');
-    
-                    const priorityTag = metaContainer.appendChild(d.createElement('li'));
-                    priorityTag.classList.add('meta-tag');
-                    // priorityTag.classList.add('') how to add priorty class? with switch?
-                    priorityTag.textContent = taskObj.priority;
-    
-                    const projectTag = metaContainer.appendChild(d.createElement('li'));
-                    projectTag.classList.add('meta-tag');
-                    projectTag.textContent = taskObj.project;
+
+                    if (taskObj.priority) {
+                        const priorityTag = metaContainer.appendChild(d.createElement('li'));
+                        priorityTag.classList.add('meta-tag');
+                        priorityTag.textContent = taskObj.priority;
+                        priorityTag.classList.add(`${priorityTag.textContent.toLowerCase()}-priority`)
+                    }
+
+                    if (taskObj.projectTag) {
+                        const projectTag = metaContainer.appendChild(d.createElement('li'));
+                        projectTag.classList.add('meta-tag');
+                        projectTag.textContent = taskObj.project;
+                    }
                     
                     const dueDateTag = metaContainer.appendChild(d.createElement('li'));
                     dueDateTag.classList.add('meta-tag');
