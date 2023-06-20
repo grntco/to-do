@@ -55,7 +55,7 @@ export function createViewContainer(view) {
                         priorityTag.classList.add(`${priorityTag.textContent.toLowerCase()}-priority`)
                     }
 
-                    if (taskObj.projectTag) {
+                    if (taskObj.project) {
                         const projectTag = metaContainer.appendChild(d.createElement('li'));
                         projectTag.classList.add('meta-tag');
                         projectTag.textContent = taskObj.project;

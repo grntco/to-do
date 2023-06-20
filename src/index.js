@@ -8,7 +8,7 @@ import events from './modules/events';
 const newProject = new Project ('Gym', 'Things to fill 8 hours with');
 
 console.log(newProject.getTasks());
-console.log(weekView.getTasks());
+console.log(todayView.getTasks());
 
 createNav();
 createSidebar();
