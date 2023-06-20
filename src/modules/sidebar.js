@@ -28,7 +28,7 @@ export default function createSidebar() {
 
             const weekViewBtn = btnsContainer.appendChild(d.createElement('button'));
             weekViewBtn.id = 'week-view-btn';
-            weekViewBtn.innerHTML = `<i class="fa-solid fa-calendar-week"></i>Week<span>${0}</span>`;
+            weekViewBtn.innerHTML = `<i class="fa-solid fa-calendar-week"></i>${weekView.title}<span>${weekView.getTasks().length}</span>`;
             // Need weekView.length
 
         })();
