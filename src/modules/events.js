@@ -2,18 +2,20 @@ import { d } from "./mainContainer";
 import changeTheme from "./changeTheme";
 import { toggleSidebar } from "./sidebar";
 import { createViewContainer, removeViewContainer } from "./viewContainer";
-import { createNewProjectModal } from "./forms";
+import { createNewProjectModal, createNewTaskFormContainer, removeModal } from "./forms";
 import { allTasks, Task, allProjects, Project, inboxView, todayView, weekView } from './app';
 
 const events = (function() {
     d.addEventListener('click', function(e) {
+        e.preventDefault();
+        // Prevent default here prevents the cal form selector on the input[type='text'];
         const target = e.target;
 
-        if (target.classList.contains('sidebar-toggle-btn') || target.classList.contains('fa-bars')) {
+        if (target.classList.contains('sidebar-toggle-btn')) {
             toggleSidebar();
         }
 
-        if (target.classList.contains('theme-toggle-btn') || target.classList.contains('fa-moon')) {
+        if (target.classList.contains('theme-toggle-btn')) {
             changeTheme();
         }
 
@@ -39,8 +41,16 @@ const events = (function() {
             createViewContainer(projectObj);
         }
 
+        if (target.id === 'add-task-btn') {
+            createNewTaskFormContainer();
+        }
+
         if (target.id === 'add-project-btn') {
             createNewProjectModal();
+        }
+
+        if (target.classList.contains('cancel-btn')) {
+            removeModal();
         }
     });
 })();

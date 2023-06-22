@@ -75,6 +75,10 @@ export function createViewContainer(view) {
     return viewContainer;
 }
 
+export function getViewContainer() {
+    return d.querySelector('.view-container');
+}
+
 export function removeViewContainer() {
-    mainContainer.removeChild(d.querySelector('.view-container'));
+    mainContainer.removeChild(getViewContainer());
 }
