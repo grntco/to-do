@@ -418,7 +418,7 @@ form .create-btn:hover {
     display: grid;
     align-items: center;
     justify-content: center;
-    /* background-color: var(--secondary-bg-color); */
+    background-color: var(--secondary-bg-color);
     opacity: 0.8;
 }
 
@@ -433,6 +433,7 @@ form .create-btn:hover {
     min-height: 240px;
     background-color: var(--primary-bg-color);
     border: 1px solid var(--primary-border-color);
+    box-shadow: 2px 4px 10px rgba(0, 0, 0, 0.1);
 }
 
 .modal form h3 {

@@ -7,7 +7,6 @@ import { allTasks, Task, allProjects, Project, inboxView, todayView, weekView } 
 
 const events = (function() {
     d.addEventListener('click', function(e) {
-        e.preventDefault();
         // Prevent default here prevents the cal form selector on the input[type='text'];
         const target = e.target;
 
@@ -50,6 +49,7 @@ const events = (function() {
         }
 
         if (target.classList.contains('cancel-btn')) {
+            e.preventDefault();
             removeModal();
         }
     });
