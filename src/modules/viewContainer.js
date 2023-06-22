@@ -29,7 +29,6 @@ export function createViewContainer(view) {
                 completeBtn.classList.add('complete-btn');
                 // completeBtn.innerHTML = `<i class="fa-regular fa-circle"></i>`;
 
-
                 const createPrimaryInfo = (function() {
                     const primaryInfo = taskCard.appendChild(d.createElement('div'));
                     primaryInfo.classList.add('primary-info');

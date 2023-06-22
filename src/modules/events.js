@@ -35,7 +35,7 @@ const events = (function() {
 
         if (target.classList.contains('project-sb-btn')) {
             const projectName = target.textContent.replace(/\d/g, '');
-            const projectObj = allProjects.find((project) => project.title = projectName);
+            const projectObj = allProjects.find((project) => project.title === projectName);
             removeViewContainer();
             createViewContainer(projectObj);
         }
