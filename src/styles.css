@@ -317,7 +317,7 @@ form .textarea {
 }
 
 form .textarea[contenteditable]:empty::before {
-    content: "Task description";
+    content: "Description";
     color: var(--secondary-txt-color);
     font-size: 0.8rem;
     font-family: var(--primary-font);

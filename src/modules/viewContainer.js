@@ -9,9 +9,9 @@ export function createViewContainer(view) {
     viewName.id = 'view-name'; //maybe don't need this...
     viewName.textContent = view.title;
 
+
     const viewDescription = viewContainer.appendChild(d.createElement('p'));
     viewDescription.id = 'view-description'; //maybe don't need this...
-    // Some views don't have descriptions... so the next element wouldn't apply... if/else here
     viewDescription.textContent = view.description;
 
     const createTasksContainer = (function() {
@@ -41,7 +41,6 @@ export function createViewContainer(view) {
                     const description = primaryInfo.appendChild(d.createElement('div'));
                     description.classList.add('description');
                     description.textContent = taskObj.description;
-
                 })();
 
                 const createMetaContainer = (function() {

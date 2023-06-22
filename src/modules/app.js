@@ -76,10 +76,13 @@ class Project extends TasksView {
 
 const newProject = new Project('Gym', 'Get swole');
 newProject.add();
+const newProject2 = new Project('Work', 'Things to fill 8 hours with');
+newProject2.add();
+
 
 const newTask = new Task('Write book', 'At least 50 pages', '2023-6-1', 'High', 'Gym');
 newTask.add();
-const newTask2 = new Task('Write blog', 'At least 50 words', '2023-6-1', 'Medium', 'Work');
+const newTask2 = new Task('Write blog', 'At least 50 words', '2023-6-25', 'Medium', 'Work');
 newTask2.add();
 const newTask3 = new Task('Do pullups', 'Aim for 10', '2023-6-20', 'Medium', 'Gym');
 newTask3.add();

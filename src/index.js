@@ -5,10 +5,8 @@ import { createSidebar } from './modules/sidebar';
 import { createViewContainer, removeViewContainer } from './modules/viewContainer';
 import events from './modules/events';
 
-const newProject = new Project ('Gym', 'Things to fill 8 hours with');
-
-console.log(newProject.getTasks());
 console.log(todayView.getTasks());
+console.log(allProjects)
 
 createNav();
 createSidebar();
