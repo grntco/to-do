@@ -1,3 +1,4 @@
+import { add } from "date-fns";
 import { allProjects } from "./app";
 import { d, mainContainer } from "./mainContainer";
 import { getViewContainer } from "./viewContainer";
@@ -55,6 +56,10 @@ export function createNewProjectModal() {
 }
 
 export function createNewTaskFormContainer() {
+    const addTaskBtn = d.getElementById('add-task-btn');
+    addTaskBtn.disabled = true;
+    // will need to re-enable somewhere
+
     const newTaskFormContainer = getViewContainer().insertBefore(d.createElement('div'), d.getElementById('add-task-btn'));
     newTaskFormContainer.classList.add('new-task-form-container');
 
@@ -141,9 +146,6 @@ export function createNewTaskFormContainer() {
 
     })();
 }
-
-
-
 
 export function removeModal() {
     console.log('hello');
