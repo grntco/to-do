@@ -2,7 +2,7 @@ import { d } from "./mainContainer";
 import changeTheme from "./changeTheme";
 import { toggleSidebar } from "./sidebar";
 import { createViewContainer, removeViewContainer } from "./viewContainer";
-import { createNewProjectModal, createNewTaskFormContainer, removeModal } from "./forms";
+import { createEditTaskModal, createNewProjectModal, createNewTaskFormContainer, removeModal } from "./forms";
 import { allTasks, Task, allProjects, Project, inboxView, todayView, weekView } from './app';
 
 const events = (function() {
@@ -41,7 +41,7 @@ const events = (function() {
         }
 
         if (target.id === 'add-task-btn') {
-            createNewTaskFormContainer();
+            createNewTaskFormContainer()
         }
 
         if (target.id === 'add-project-btn') {
@@ -51,6 +51,12 @@ const events = (function() {
         if (target.classList.contains('cancel-btn')) {
             e.preventDefault();
             removeModal();
+        }
+
+        if (target.classList.contains('task')) {
+            const taskCard = target;
+            const taskObj = allTasks.find((task) => task.title === taskCard.querySelector('.name').textContent);
+            createEditTaskModal(taskObj);
         }
     });
 })();

@@ -6,7 +6,7 @@ import { createViewContainer, removeViewContainer } from './modules/viewContaine
 import events from './modules/events';
 
 console.log(todayView.getTasks());
-console.log(allProjects);
+console.log(allTasks);
 
 createNav();
 createSidebar();

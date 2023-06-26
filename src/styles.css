@@ -122,10 +122,6 @@ nav img {
     display: flex;
 }
 
-/* .main-container.modal-bg-blur {
-    filter: blur(2px);
-} */
-
 /* Sidebar */
 
 .sidebar {
@@ -239,6 +235,7 @@ nav img {
     gap: 4px;
     border-left: 4px solid var(--primary-border-color);
     padding-left: 8px;
+    pointer-events: none;
 }
 
 .task .description {
@@ -253,6 +250,7 @@ nav img {
     gap: 8px;
     margin-left: auto;
     margin-bottom: auto;
+    pointer-events: none;
 }
 
 .task .meta-tag {
