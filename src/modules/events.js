@@ -6,7 +6,7 @@ import { createNewTaskForm, removeNewTaskForm } from "./forms/newTaskForm";
 import createEditTaskModal from "./forms/editTaskModal";
 import createNewProjectModal from "./forms/newProjectModal";
 import removeModal from "./forms/removeModal";
-import { createTask } from "./forms/formHandlers";
+import { createTask, createProject } from "./forms/formHandlers";
 
 import { allTasks, Task, allProjects, Project, inboxView, todayView, weekView } from './app';
 
@@ -56,6 +56,11 @@ const events = (function() {
 
         if (target.id === 'add-project-btn') {
             createNewProjectModal();
+        }
+
+        if (target.id === 'create-project-btn') {
+            e.preventDefault();
+            createProject();
         }
 
         if (target.classList.contains('cancel-modal-btn')) {

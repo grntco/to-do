@@ -1,7 +1,8 @@
 // bridge between DOM and app
 import { d } from "../mainContainer";
-import { Project, Task } from "../app";
+import { Project, Task, allProjects } from "../app";
 import { removeNewTaskForm } from "./newTaskForm";
+import removeModal from "./removeModal";
 
 export function createTask() {
     const title = d.getElementById('task-name-input').value;
@@ -17,18 +18,16 @@ export function createTask() {
     removeNewTaskForm();
 }
 
-
-
-
-
-
-
-
-
 export function editTask() {
 
 }
 
 export function createProject() {
+    const title = d.getElementById('project-name-input').value;
+    const description = d.getElementById('project-description-input').textContent;
 
+    const newProject = new Project(title, description);
+    newProject.add();
+    removeModal();
+    // or just refresh/init
 }

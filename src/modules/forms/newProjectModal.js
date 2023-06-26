@@ -22,6 +22,7 @@ export default function createNewProjectModal() {
             titleInput.autocomplete = 'off';
 
             const descriptionInput = fieldset.appendChild(d.createElement('div'));
+            descriptionInput.id = 'project-description-input';
             descriptionInput.innerHTML = `<span class="textarea" role="textbox" contenteditable></span>`;
         })();
 
