@@ -3,6 +3,7 @@ import { d } from "../mainContainer";
 import { Project, Task, allProjects } from "../app";
 import { removeNewTaskForm } from "./newTaskForm";
 import removeModal from "./removeModal";
+import refreshContent from "../refreshContent";
 
 export function createTask() {
     const title = d.getElementById('task-name-input').value;
@@ -15,7 +16,8 @@ export function createTask() {
     newTask.add()
     // refresh content 
     // may not need to remove the form if you just refresh everything
-    removeNewTaskForm();
+    refreshContent();
+    // removeNewTaskForm();
 }
 
 export function editTask() {
@@ -29,5 +31,6 @@ export function createProject() {
     const newProject = new Project(title, description);
     newProject.add();
     removeModal();
+
     // or just refresh/init
 }

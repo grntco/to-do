@@ -66,5 +66,11 @@ export function createSidebar() {
 };
 
 export function toggleSidebar() {
-    d.querySelector('.sidebar').classList.toggle('collapse');
+    d.querySelector('.sidebar').classList.toggle('collapsed');
+
+    // if (sidebar.classList.contains('collapsed')) {
+    //     sidebar.classList.remove('collapsed');
+    // } else {
+    //     sidebar.classList.add('collapsed');
+    // }
 };

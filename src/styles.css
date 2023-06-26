@@ -134,7 +134,7 @@ nav img {
     background-color: var(--secondary-bg-color);
 }
 
-.collapse {
+.collapsed {
     position: absolute;
     left: -336px;
 }

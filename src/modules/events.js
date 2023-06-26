@@ -18,7 +18,7 @@ const events = (function() {
         if (target.classList.contains('sidebar-toggle-btn')) {
             toggleSidebar();
         }
-
+        // could do one init/refresh here, instead of individuall in the functions, just need to choose which to do them on and group together
         if (target.classList.contains('theme-toggle-btn')) {
             changeTheme();
         }
