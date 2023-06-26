@@ -46,16 +46,16 @@ export function createNewProjectModal() {
     return newProjectModal;
 }
 
-export function createNewTaskFormContainer() {
+export function createNewTaskForm() {
     const addTaskBtn = d.getElementById('add-task-btn');
     addTaskBtn.disabled = true;
-    // will need to re-enable somewhere
+    // will need to re-enable somewhere | although maybe not...
 
-    const newTaskFormContainer = getViewContainer().insertBefore(d.createElement('div'), d.getElementById('add-task-btn'));
-    newTaskFormContainer.classList.add('new-task-form-container');
+    const newTaskForm = getViewContainer().insertBefore(d.createElement('div'), d.getElementById('add-task-btn'));
+    newTaskForm.classList.add('new-task-form-container');
 
     const createForm = (function() {
-        const form = newTaskFormContainer.appendChild(d.createElement('form'));
+        const form = newTaskForm.appendChild(d.createElement('form'));
 
         const createMainInfoFieldset = (function() {
             const fieldset = form.appendChild(d.createElement('fieldset'));
@@ -133,6 +133,7 @@ export function createNewTaskFormContainer() {
 
             const cancelBtn = btnsContainer.appendChild(d.createElement('button'));
             cancelBtn.classList.add('cancel-btn');
+            cancelBtn.id = 'cancel-task-form-btn';
             cancelBtn.textContent = 'Cancel';
 
             const createBtn = btnsContainer.appendChild(d.createElement('button'));
@@ -142,6 +143,12 @@ export function createNewTaskFormContainer() {
         })();
 
     })();
+}
+
+export function removeNewTaskForm() {
+    getViewContainer().removeChild(d.querySelector('.new-task-form-container'));
+    const addTaskBtn = d.getElementById('add-task-btn');
+    addTaskBtn.disabled = false;
 }
 
 export function createEditTaskModal(taskObj) {
@@ -241,11 +248,11 @@ export function createEditTaskModal(taskObj) {
     })();
 }
 
-export function removeModal() {
-    mainContainer.removeChild(d.querySelector('.modal'));
-}
+// export function removeModal() {
+//     mainContainer.removeChild(d.querySelector('.modal'));
+// }
 
-// export function removeNewTaskFormContainer() {
+// export function removenewTaskForm() {
 //     console.log()
 //     getViewContainer().removeChild(d.querySelector('.new-task-form-container'));
 // };

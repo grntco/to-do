@@ -2,7 +2,7 @@ import { d } from "./mainContainer";
 import changeTheme from "./changeTheme";
 import { toggleSidebar } from "./sidebar";
 import { createViewContainer, removeViewContainer } from "./viewContainer";
-import { createEditTaskModal, createNewProjectModal, createNewTaskFormContainer, removeModal } from "./forms";
+import { createEditTaskModal, createNewProjectModal, createNewTaskForm, removeModal, removeNewTaskForm } from "./forms";
 import { allTasks, Task, allProjects, Project, inboxView, todayView, weekView } from './app';
 
 const events = (function() {
@@ -41,7 +41,7 @@ const events = (function() {
         }
 
         if (target.id === 'add-task-btn') {
-            createNewTaskFormContainer()
+            createNewTaskForm()
         }
 
         if (target.id === 'add-project-btn') {
@@ -50,7 +50,12 @@ const events = (function() {
 
         if (target.classList.contains('cancel-btn')) {
             e.preventDefault();
-            removeModal();
+            // removeModal();
+        }
+
+        if (target.id === 'cancel-task-form-btn') {
+            e.preventDefault();
+            removeNewTaskForm();
         }
 
         if (target.classList.contains('task')) {
