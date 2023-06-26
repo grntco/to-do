@@ -2,7 +2,11 @@ import { d } from "./mainContainer";
 import changeTheme from "./changeTheme";
 import { toggleSidebar } from "./sidebar";
 import { createViewContainer, removeViewContainer } from "./viewContainer";
-import { createEditTaskModal, createNewProjectModal, createNewTaskForm, removeModal, removeNewTaskForm } from "./forms";
+import { createNewTaskForm, removeNewTaskForm } from "./forms/newTaskForm";
+import createEditTaskModal from "./forms/editTaskModal";
+import createNewProjectModal from "./forms/newProjectModal";
+import removeModal from "./forms/removeModal";
+
 import { allTasks, Task, allProjects, Project, inboxView, todayView, weekView } from './app';
 
 const events = (function() {
@@ -50,7 +54,6 @@ const events = (function() {
 
         if (target.classList.contains('cancel-modal-btn')) {
             e.preventDefault();
-            console.log('canceled')
             removeModal();
         }
 
