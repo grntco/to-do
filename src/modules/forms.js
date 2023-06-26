@@ -152,7 +152,8 @@ export function createEditTaskModal(taskObj) {
             titleInput.type = 'text';
             titleInput.name = 'task-name-input';
             titleInput.id = 'task-name-input';
-            titleInput.placeholder = taskObj.title;
+            titleInput.placeholder = 'Task name'
+            titleInput.value = taskObj.title;
             titleInput.autocomplete = 'off';
 
             const descriptionInput = fieldset.appendChild(d.createElement('div'));
