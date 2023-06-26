@@ -33,7 +33,7 @@ export function createNewProjectModal() {
             btnsContainer.classList.add('btns-container');
 
             const cancelBtn = btnsContainer.appendChild(d.createElement('button'));
-            cancelBtn.classList.add('cancel-btn');
+            cancelBtn.classList.add('cancel-btn', 'cancel-modal-btn');
             cancelBtn.textContent = 'Cancel';
 
             const createBtn = btnsContainer.appendChild(d.createElement('button'));
@@ -132,8 +132,7 @@ export function createNewTaskForm() {
             btnsContainer.classList.add('btns-container');
 
             const cancelBtn = btnsContainer.appendChild(d.createElement('button'));
-            cancelBtn.classList.add('cancel-btn');
-            cancelBtn.id = 'cancel-task-form-btn';
+            cancelBtn.classList.add('cancel-btn', 'cancel-form-btn');
             cancelBtn.textContent = 'Cancel';
 
             const createBtn = btnsContainer.appendChild(d.createElement('button'));
@@ -237,7 +236,7 @@ export function createEditTaskModal(taskObj) {
             btnsContainer.classList.add('btns-container');
 
             const cancelBtn = btnsContainer.appendChild(d.createElement('button'));
-            cancelBtn.classList.add('cancel-btn');
+            cancelBtn.classList.add('cancel-btn', 'cancel-modal-btn');
             cancelBtn.textContent = 'Cancel';
 
             const createBtn = btnsContainer.appendChild(d.createElement('button'));
@@ -248,11 +247,6 @@ export function createEditTaskModal(taskObj) {
     })();
 }
 
-// export function removeModal() {
-//     mainContainer.removeChild(d.querySelector('.modal'));
-// }
-
-// export function removenewTaskForm() {
-//     console.log()
-//     getViewContainer().removeChild(d.querySelector('.new-task-form-container'));
-// };
+export function removeModal() {
+    mainContainer.removeChild(d.querySelector('.modal'));
+}

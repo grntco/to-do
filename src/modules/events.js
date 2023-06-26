@@ -48,12 +48,13 @@ const events = (function() {
             createNewProjectModal();
         }
 
-        if (target.classList.contains('cancel-btn')) {
+        if (target.classList.contains('cancel-modal-btn')) {
             e.preventDefault();
-            // removeModal();
+            console.log('canceled')
+            removeModal();
         }
 
-        if (target.id === 'cancel-task-form-btn') {
+        if (target.classList.contains('cancel-form-btn')) {
             e.preventDefault();
             removeNewTaskForm();
         }
