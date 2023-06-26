@@ -90,6 +90,12 @@ export function createNewTaskFormContainer() {
                     option.value = allProjects[i].title;
                     option.textContent = allProjects[i].title;
                 }
+
+                const viewName = getViewContainer().querySelector('#view-name').textContent
+                if (allProjects.some((project) => project.title === viewName)) {
+                    const currentProject = [...projectInput.children].find((option) => option.textContent === viewName);
+                    currentProject.selected = true;
+                }
             })();
 
             const createPriorityInput = (function() {
