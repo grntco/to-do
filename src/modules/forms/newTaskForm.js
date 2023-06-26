@@ -18,11 +18,13 @@ export function createNewTaskForm() {
             const titleInput = fieldset.appendChild(d.createElement('input'));
             titleInput.type = 'text';
             titleInput.name = 'task-name-input';
+            // Really don't think I need names on inputs. Is this just if you have labels?
             titleInput.id = 'task-name-input';
             titleInput.placeholder = 'Task name';
             titleInput.autocomplete = 'off';
 
             const descriptionInput = fieldset.appendChild(d.createElement('div'));
+            descriptionInput.id = 'task-description-input'
             descriptionInput.innerHTML = `<span class="textarea" role="textbox" contenteditable></span>`;
         })();
 
@@ -32,8 +34,8 @@ export function createNewTaskForm() {
 
             const createProjectInput = (function() {
                 const projectInput = metaInputContainer.appendChild(d.createElement('select'));
-                projectInput.name = 'project-input';
-                projectInput.id = 'project-input';
+                projectInput.name = 'task-project-input';
+                projectInput.id = 'task-project-input';
 
                 const optionsTitle = projectInput.appendChild(d.createElement('option'));
                 optionsTitle.selected = true;
@@ -55,8 +57,8 @@ export function createNewTaskForm() {
 
             const createPriorityInput = (function() {
                 const priorityInput = metaInputContainer.appendChild(d.createElement('select'));
-                priorityInput.name = 'priority-input';
-                priorityInput.id = 'priority-input';
+                priorityInput.name = 'task-priority-input';
+                priorityInput.id = 'task-priority-input';
 
                 const optionsTitle = priorityInput.appendChild(d.createElement('option'));
                 optionsTitle.selected = true;
@@ -64,22 +66,22 @@ export function createNewTaskForm() {
                 optionsTitle.textContent = 'Priority';
 
                 const highPriorityOption = priorityInput.appendChild(d.createElement('option'));
-                highPriorityOption.value = 'high';
+                highPriorityOption.value = 'High';
                 highPriorityOption.textContent = 'High';
 
                 const mediumPriorityOption = priorityInput.appendChild(d.createElement('option'));
-                mediumPriorityOption.value = 'medium';
+                mediumPriorityOption.value = 'Medium';
                 mediumPriorityOption.textContent = 'Medium';
 
                 const lowPriorityOption = priorityInput.appendChild(d.createElement('option'));
-                lowPriorityOption.value = 'low';
+                lowPriorityOption.value = 'Low';
                 lowPriorityOption.textContent = 'Low';
             })();
 
             const dateInput = metaInputContainer.appendChild(d.createElement('input'));
             dateInput.type = 'date';
-            dateInput.name = 'due-date-input';
-            dateInput.id = 'due-date-input';
+            dateInput.name = 'task-due-date-input';
+            dateInput.id = 'task-due-date-input';
         })();
 
         const createBtnsContainer = (function() {

@@ -6,6 +6,7 @@ import { createNewTaskForm, removeNewTaskForm } from "./forms/newTaskForm";
 import createEditTaskModal from "./forms/editTaskModal";
 import createNewProjectModal from "./forms/newProjectModal";
 import removeModal from "./forms/removeModal";
+import { createTask } from "./forms/formHandlers";
 
 import { allTasks, Task, allProjects, Project, inboxView, todayView, weekView } from './app';
 
@@ -46,6 +47,11 @@ const events = (function() {
 
         if (target.id === 'add-task-btn') {
             createNewTaskForm()
+        }
+
+        if (target.id === 'create-task-btn') {
+            e.preventDefault();
+            createTask();
         }
 
         if (target.id === 'add-project-btn') {
