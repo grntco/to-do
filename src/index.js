@@ -5,8 +5,12 @@ import { createSidebar } from './modules/sidebar';
 import { createViewContainer, removeViewContainer } from './modules/viewContainer';
 import events from './modules/events';
 
-console.log(todayView.getTasks());
 console.log(allTasks);
+console.log(JSON.parse(localStorage.getItem('allTasks')));
+// console.log(localStorage.getItem('allTasks'))
+
+// console.log(todayView.getTasks());
+// console.log(allTasks);
 
 createNav();
 createSidebar();

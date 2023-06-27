@@ -54,6 +54,8 @@ export function createSidebar() {
             const btnsContainer = projectsViewListContainer.appendChild(d.createElement('div'));
             btnsContainer.classList.add('btns-container');
 
+            // const allProjects = JSON.parse(localStorage.getItem('allProjects'));
+
             for (let i = 0; i < allProjects.length; i++) {
                 const btn = btnsContainer.appendChild(d.createElement('button'));
                 btn.classList.add('project-sb-btn');
