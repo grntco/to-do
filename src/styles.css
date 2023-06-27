@@ -201,6 +201,12 @@ nav img {
     gap: 16px;
     padding: 12px 16px;
     border-bottom: 1px solid var(--primary-border-color);
+    opacity: 1;
+}
+
+.task.completed {
+    opacity: 0;
+    transition: opacity 2s;
 }
 
 .task:hover {
@@ -238,7 +244,7 @@ nav img {
     pointer-events: none;
 }
 
-.task .primary-info.completed {
+.task .primary-info.strikethrough {
     text-decoration: line-through;
 }
 

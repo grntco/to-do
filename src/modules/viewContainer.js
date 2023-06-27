@@ -24,7 +24,6 @@ export function createViewContainer(view) {
 
                 const taskCard = tasksContainer.appendChild(d.createElement('div'));
                 taskCard.classList.add('task');
-                taskCard.classList.add('completed');
 
                 const completeBtn = taskCard.appendChild(d.createElement('button'));
                 completeBtn.classList.add('task-complete-btn');
