@@ -14,14 +14,13 @@ export function createTask() {
 
     const newTask = new Task(title, description, project, priority, dueDate);
     newTask.add()
-    // refresh content 
-    // may not need to remove the form if you just refresh everything
+
     refreshContent();
-    // removeNewTaskForm();
 }
 
 export function editTask() {
-
+    console.log("what's up?");
+    removeModal();
 }
 
 export function createProject() {
@@ -32,5 +31,5 @@ export function createProject() {
     newProject.add();
     removeModal();
 
-    // or just refresh/init
+    refreshContent();
 }

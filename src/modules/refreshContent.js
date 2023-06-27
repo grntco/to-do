@@ -1,9 +1,7 @@
-import createNav from "./nav"
 import { createSidebar, toggleSidebar } from "./sidebar"
 import { createViewContainer } from "./viewContainer";
 import { d, mainContainer } from "./mainContainer";
 import { inboxView, todayView, weekView, allProjects } from "./app";
-
 
 export default function refreshContent() {
     const getSidebarStatus = function() {
@@ -15,7 +13,7 @@ export default function refreshContent() {
 
     const getCurrentView = function() {
         const viewName = d.getElementById('view-name').textContent;
-        console.log(viewName);
+
         switch (viewName) {
             case 'Inbox':
                 return inboxView;

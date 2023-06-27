@@ -207,7 +207,7 @@ nav img {
     cursor: pointer;
 }
 
-.task .complete-btn  {
+.task .task-complete-btn  {
     background: none;
     border: 2px solid var(--secondary-txt-color);
     border-radius: 50%;
@@ -217,7 +217,7 @@ nav img {
     position: relative;
 }
 
-.task .complete-btn:hover::after {
+.task .task-complete-btn:hover::after {
     color: var(--secondary-txt-color);
     border-radius: 50%;
     content: '✓';
@@ -236,6 +236,10 @@ nav img {
     border-left: 4px solid var(--primary-border-color);
     padding-left: 8px;
     pointer-events: none;
+}
+
+.task .primary-info.completed {
+    text-decoration: line-through;
 }
 
 .task .description {

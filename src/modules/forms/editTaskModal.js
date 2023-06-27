@@ -92,8 +92,8 @@ export default function createEditTaskModal(taskObj) {
 
             const createBtn = btnsContainer.appendChild(d.createElement('button'));
             createBtn.classList.add('create-btn');
-            createBtn.id = 'create-task-btn';
-            createBtn.textContent = 'Create Task';
+            createBtn.id = 'done-edit-task-btn';
+            createBtn.textContent = 'Done';
         })();
     })();
 }

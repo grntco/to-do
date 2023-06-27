@@ -6,9 +6,10 @@ import { createNewTaskForm, removeNewTaskForm } from "./forms/newTaskForm";
 import createEditTaskModal from "./forms/editTaskModal";
 import createNewProjectModal from "./forms/newProjectModal";
 import removeModal from "./forms/removeModal";
-import { createTask, createProject } from "./forms/formHandlers";
+import { createTask, createProject, editTask } from "./forms/formHandlers";
 
 import { allTasks, Task, allProjects, Project, inboxView, todayView, weekView } from './app';
+import { completeTask } from "./completeTask";
 
 const events = (function() {
     d.addEventListener('click', function(e) {
@@ -63,6 +64,11 @@ const events = (function() {
             createProject();
         }
 
+        if (target.id === 'done-edit-task-btn') {
+            e.preventDefault()
+            editTask();
+        }
+
         if (target.classList.contains('cancel-modal-btn')) {
             e.preventDefault();
             removeModal();
@@ -77,6 +83,10 @@ const events = (function() {
             const taskCard = target;
             const taskObj = allTasks.find((task) => task.title === taskCard.querySelector('.name').textContent);
             createEditTaskModal(taskObj);
+        }
+
+        if (target.classList.contains('task-complete-btn')) {
+            completeTask(target.parentElement);
         }
     });
 })();
