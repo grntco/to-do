@@ -16,11 +16,11 @@ class Task {
         localStorage.setItem("allTasks", JSON.stringify(allTasks));
     };
 
-    delete() {
-        let index = allTasks.findIndex((task) => task === this);
-        allTasks.splice(index, 1);
-        localStorage.setItem("allTasks", JSON.stringify(allTasks))
-    };
+    // delete() {
+    //     let index = allTasks.findIndex((task) => task === this);
+    //     allTasks.splice(index, 1);
+    //     localStorage.setItem("allTasks", JSON.stringify(allTasks))
+    // };
 }
 
 class TasksView {
@@ -38,7 +38,6 @@ const todayView = new TasksView('Today');
 todayView.getTasks = function() {
     return JSON.parse(localStorage.getItem('allTasks')).filter((task) => isToday(task.dueDate))
 }
-// Something like return  allTasks.filter((task) => task.dueDate.isNow())
 
 const weekView = new TasksView('Week');
 weekView.getTasks = function() {
@@ -58,19 +57,19 @@ class Project extends TasksView {
         localStorage.setItem('allProjects', JSON.stringify(allProjects));
     }
 
-    delete() {
-        let index = allProjects.findIndex((project) => project === this);
-        allProjects.splice(index, 1);
-        localStorage.setItem('allProjects', JSON.stringify(allProjects));
-    }
+    // delete() {
+    //     let index = allProjects.findIndex((project) => project === this);
+    //     allProjects.splice(index, 1);
+    //     localStorage.setItem('allProjects', JSON.stringify(allProjects));
+    // }
 
-    getTasks() {
-        return JSON.parse(localStorage.getItem('allTasks')).filter(task => task.project === this.title);
-    }
+    // getTasks() {
+    //     return JSON.parse(localStorage.getItem('allTasks')).filter(task => task.project === this.title);
+    // }
 }
 
-// const newProject = new Project('Gym', 'Get swole');
-// newProject.add();
+const newProject = new Project('Gym', 'Get swole');
+newProject.add();
 // const newProject2 = new Project('Work', 'Things to fill 8 hours with');
 // newProject2.add();
 

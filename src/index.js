@@ -4,9 +4,15 @@ import createNav from './modules/nav';
 import { createSidebar } from './modules/sidebar';
 import { createViewContainer, removeViewContainer } from './modules/viewContainer';
 import events from './modules/events';
+import { saveToLocalStorage, getFromLocalStorage } from './modules/localStorage';
 
-console.log(allTasks);
-console.log(JSON.parse(localStorage.getItem('allTasks')));
+console.log(allTasks)
+saveToLocalStorage(allTasks);
+getFromLocalStorage(allTasks);
+
+// console.log(allTasks);
+// console.log(JSON.parse(localStorage.getItem('allTasks')));
+
 // console.log(localStorage.getItem('allTasks'))
 
 // console.log(todayView.getTasks());

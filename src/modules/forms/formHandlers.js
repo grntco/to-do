@@ -13,7 +13,7 @@ export function createTask() {
     const dueDate = d.getElementById('task-due-date-input').value;
 
     const newTask = new Task(title, description, project, priority, dueDate);
-    newTask.add()
+    newTask.add();
 
     refreshContent();
 }

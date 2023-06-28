@@ -1,4 +1,5 @@
 import { allProjects, inboxView, todayView, weekView } from "./app";
+import { getFromLocalStorage } from "./localStorage";
 import { d, mainContainer } from "./mainContainer";
 
 export function createSidebar() {
@@ -54,12 +55,12 @@ export function createSidebar() {
             const btnsContainer = projectsViewListContainer.appendChild(d.createElement('div'));
             btnsContainer.classList.add('btns-container');
 
-            // const allProjects = JSON.parse(localStorage.getItem('allProjects'));
+            const savedProjects = getFromLocalStorage(allProjects);
 
-            for (let i = 0; i < allProjects.length; i++) {
+            for (let i = 0; i < savedProjects.length; i++) {
                 const btn = btnsContainer.appendChild(d.createElement('button'));
                 btn.classList.add('project-sb-btn');
-                btn.innerHTML = `<i class="fa-solid fa-list-check"></i>${allProjects[i].title}<span>${allProjects[i].getTasks().length}</span>`
+                btn.innerHTML = `<i class="fa-solid fa-list-check"></i>${savedProjects[i].title}<span>${savedProjects[i].getTasks().length}</span>`
             }
         })();
     })();
