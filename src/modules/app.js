@@ -1,6 +1,7 @@
 import { isToday, isAfter, isBefore, addDays } from "date-fns";
+import { getFromLocalStorage } from "./localStorage";
 
-const allTasks = [];
+let allTasks = [];
 
 class Task {
     constructor(_title, _description, _project, _priority, _dueDate) {
@@ -16,11 +17,11 @@ class Task {
         localStorage.setItem("allTasks", JSON.stringify(allTasks));
     };
 
-    // delete() {
-    //     let index = allTasks.findIndex((task) => task === this);
-    //     allTasks.splice(index, 1);
-    //     localStorage.setItem("allTasks", JSON.stringify(allTasks))
-    // };
+    delete() {
+        let index = allTasks.findIndex((task) => task === this);
+        allTasks.splice(index, 1);
+        localStorage.setItem("allTasks", JSON.stringify(allTasks))
+    };
 }
 
 class TasksView {
@@ -31,17 +32,22 @@ class TasksView {
 
 const inboxView = new TasksView('Inbox');
 inboxView.getTasks = function() {
-    return JSON.parse(localStorage.getItem('allTasks')).filter((task) => task.project === undefined);
+    //  allTasks = getFromLocalStorage(allTasks);
+    // return allTasks.filter((task) => task.project === undefined);
+    // return JSON.parse(localStorage.getItem('allTasks')).filter((task) => task.project === undefined);
+    return getFromLocalStorage(allTasks).filter((task) => task.project === undefined);
 }
 
 const todayView = new TasksView('Today');
 todayView.getTasks = function() {
-    return JSON.parse(localStorage.getItem('allTasks')).filter((task) => isToday(task.dueDate))
+    // return JSON.parse(localStorage.getItem('allTasks')).filter((task) => isToday(task.dueDate))
+    return getFromLocalStorage(allTasks).filter((task) => isToday(task.dueDate));
 }
 
 const weekView = new TasksView('Week');
 weekView.getTasks = function() {
-    return JSON.parse(localStorage.getItem('allTasks')).filter((task) => (isToday(task.dueDate) || isAfter(task.dueDate, new Date())) && isBefore(task.dueDate, addDays(new Date(), 6)));
+    // return JSON.parse(localStorage.getItem('allTasks')).filter((task) => (isToday(task.dueDate) || isAfter(task.dueDate, new Date())) && isBefore(task.dueDate, addDays(new Date(), 6)));
+    return getFromLocalStorage(allTasks).filter((task) => (isToday(task.dueDate) || isAfter(task.dueDate, new Date())) && isBefore(task.dueDate, addDays(new Date(), 6)));
 }
 
 const allProjects = [];
@@ -63,9 +69,9 @@ class Project extends TasksView {
     //     localStorage.setItem('allProjects', JSON.stringify(allProjects));
     // }
 
-    // getTasks() {
-    //     return JSON.parse(localStorage.getItem('allTasks')).filter(task => task.project === this.title);
-    // }
+    getTasks() {
+        return JSON.parse(localStorage.getItem('allTasks')).filter(task => task.project === this.title);
+    }
 }
 
 const newProject = new Project('Gym', 'Get swole');

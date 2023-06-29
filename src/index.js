@@ -6,7 +6,7 @@ import { createViewContainer, removeViewContainer } from './modules/viewContaine
 import events from './modules/events';
 import { saveToLocalStorage, getFromLocalStorage } from './modules/localStorage';
 
-console.log(allTasks)
+// console.log(allTasks)
 saveToLocalStorage(allTasks);
 getFromLocalStorage(allTasks);
 
@@ -20,7 +20,7 @@ getFromLocalStorage(allTasks);
 
 createNav();
 createSidebar();
-createViewContainer(inboxView);
+createViewContainer(allProjects[0]);
 
 
 

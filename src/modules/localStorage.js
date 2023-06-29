@@ -1,4 +1,5 @@
 import { Task, Project, allTasks, allProjects } from "./app";
+import parseISO from 'date-fns/parseISO'
 
 export function saveToLocalStorage(array) {
     let keyName = '';
@@ -25,6 +26,8 @@ export function getFromLocalStorage(array) {
                     allTasks.splice(index, 1);
                     saveToLocalStorage(allTasks);
                 }
+
+                item.dueDate = parseISO(item.dueDate);
             });
         }
     } else if (array[0] instanceof Project) {
@@ -50,6 +53,6 @@ export function getFromLocalStorage(array) {
         }
     }
 
-    console.log(array);
+    // console.log(array);
     return array; 
 }

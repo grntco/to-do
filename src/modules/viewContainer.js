@@ -1,4 +1,5 @@
 import format from "date-fns/format";
+import parseISO from 'date-fns/parseISO'
 import { d, mainContainer } from "./mainContainer";
 
 export function createViewContainer(view) {
@@ -8,7 +9,6 @@ export function createViewContainer(view) {
     const viewName = viewContainer.appendChild(d.createElement('h2'));
     viewName.id = 'view-name'; //maybe don't need this...
     viewName.textContent = view.title;
-
 
     const viewDescription = viewContainer.appendChild(d.createElement('p'));
     viewDescription.id = 'view-description'; //maybe don't need this...
@@ -61,7 +61,7 @@ export function createViewContainer(view) {
                     
                     const dueDateTag = metaContainer.appendChild(d.createElement('li'));
                     dueDateTag.classList.add('meta-tag');
-                    dueDateTag.textContent = format(taskObj.dueDate, 'PP');
+                    dueDateTag.textContent = format(parseISO(taskObj.dueDate), 'PP');
                 })();
             } 
         })();

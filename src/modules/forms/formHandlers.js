@@ -1,9 +1,10 @@
 // bridge between DOM and app
 import { d } from "../mainContainer";
-import { Project, Task, allProjects } from "../app";
+import { Project, Task, allProjects, allTasks } from "../app";
 import { removeNewTaskForm } from "./newTaskForm";
 import removeModal from "./removeModal";
 import refreshContent from "../refreshContent";
+import { saveToLocalStorage } from "../localStorage";
 
 export function createTask() {
     const title = d.getElementById('task-name-input').value;
@@ -14,6 +15,7 @@ export function createTask() {
 
     const newTask = new Task(title, description, project, priority, dueDate);
     newTask.add();
+    saveToLocalStorage(allTasks);
 
     refreshContent();
 }
