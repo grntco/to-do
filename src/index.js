@@ -7,6 +7,9 @@ import events from './modules/events';
 import { saveToLocalStorage, getFromLocalStorage } from './modules/localStorage';
 
 saveToLocalStorage(allProjects);
+console.log(allTasks);
+
+getFromLocalStorage(allTasks);
 
 createNav();
 createSidebar();

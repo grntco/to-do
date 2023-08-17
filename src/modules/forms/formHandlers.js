@@ -13,10 +13,13 @@ export function createTask() {
     const priority = d.getElementById('task-priority-input').value;
     const dueDate = d.getElementById('task-due-date-input').value;
 
-    const newTask = new Task(title, description, project, priority, dueDate);
-    newTask.add();
-    // saveToLocalStorage(allTasks);
+    if (title) {
+        const newTask = new Task(title, description, project, priority, dueDate);
+        newTask.add();
+        saveToLocalStorage(allTasks);
+    }
 
+    // close the form?
     refreshContent();
 }
 

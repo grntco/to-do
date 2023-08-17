@@ -36,7 +36,7 @@ inboxView.getTasks = function() {
     // return allTasks.filter((task) => task.project === undefined);
     // return JSON.parse(localStorage.getItem('allTasks')).filter((task) => task.project === undefined);
     // return getFromLocalStorage(allTasks).filter((task) => task.project === undefined);
-    return allTasks.filter((task) => task.project === undefined);
+    return allTasks.filter((task) => task.project === '');
 }
 
 const todayView = new TasksView('Today');
@@ -86,7 +86,7 @@ newProject2.add();
 
 const newTask = new Task('Write book', 'At least 50 pages', 'Gym', 'High', '2023-7-6');
 newTask.add();
-const newTask2 = new Task('Write blog', 'At least 50 words', 'Work', 'Medium', '2023-8-16');
+const newTask2 = new Task('Write blog', 'At least 50 words', '', 'Medium', '2023-8-17');
 newTask2.add();
 // const newTask3 = new Task('Do pullups', 'Aim for 10', 'Gym', 'Medium', '2023-6-20');
 // newTask3.add();

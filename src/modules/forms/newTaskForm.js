@@ -40,7 +40,7 @@ export function createNewTaskForm() {
                 const optionsTitle = projectInput.appendChild(d.createElement('option'));
                 optionsTitle.selected = true;
                 optionsTitle.disabled = true;
-                optionsTitle.value = undefined;
+                optionsTitle.value = '';
                 optionsTitle.textContent = 'Project';
 
                 for (let i = 0; i < allProjects.length; i++) {
