@@ -6,29 +6,8 @@ import { createViewContainer, removeViewContainer } from './modules/viewContaine
 import events from './modules/events';
 import { saveToLocalStorage, getFromLocalStorage } from './modules/localStorage';
 
-// console.log(allProjects)
-// saveToLocalStorage(allProjects);
-// saveToLocalStorage(allTasks);
-// saveToLocalStorage(allTasks);
-// console.log(getFromLocalStorage(allProjects));
-
-
-// saveToLocalStorage(allTasks);
-// getFromLocalStorage(allTasks);
-// console.log(localStorage);
-
-// console.log(allTasks);
-// console.log(JSON.parse(localStorage.getItem('allTasks')));
-
-// console.log(localStorage.getItem('allTasks'))
-
-// console.log(todayView.getTasks());
-// console.log(allTasks);
+saveToLocalStorage(allProjects);
 
 createNav();
 createSidebar();
-createViewContainer(allProjects[0]);
-
-
-
-
+createViewContainer(getFromLocalStorage(allProjects)[0]);

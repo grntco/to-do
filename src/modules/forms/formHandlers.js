@@ -29,9 +29,11 @@ export function createProject() {
     const title = d.getElementById('project-name-input').value;
     const description = d.getElementById('project-description-input').textContent;
 
-    const newProject = new Project(title, description);
-    newProject.add();
+    if (title) {
+        const newProject = new Project(title, description);
+        newProject.add();
+        saveToLocalStorage(allProjects);
+    }
     removeModal();
-
     refreshContent();
 }
