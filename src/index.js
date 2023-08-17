@@ -13,8 +13,8 @@ import { saveToLocalStorage, getFromLocalStorage } from './modules/localStorage'
 // console.log(getFromLocalStorage(allProjects));
 
 
-saveToLocalStorage(allProjects);
-getFromLocalStorage(allProjects);
+// saveToLocalStorage(allTasks);
+// getFromLocalStorage(allTasks);
 // console.log(localStorage);
 
 // console.log(allTasks);

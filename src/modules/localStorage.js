@@ -1,4 +1,4 @@
-import { Task, Project, allTasks, allProjects } from "./app";
+import { allTasks, allProjects } from "./app";
 import parseISO from 'date-fns/parseISO'
 
 export function saveToLocalStorage(data) {
@@ -18,23 +18,17 @@ export function getFromLocalStorage(data) {
             deserializedData.forEach((item) => {
                 item.add = function() {
                     allTasks.push(item);
-                    // saveToLocalStorage(allTasks);
                 }
     
                 item.delete = function() {
                     let index = allTasks.findIndex((task) => task === item);
                     allTasks.splice(index, 1);
-                    // saveToLocalStorage(allTasks);
                 }
     
-                // if (item.dueDate instanceof Date) {
                 item.dueDate = parseISO(item.dueDate);
-                // }
             });
 
             data = deserializedData;
-        } else {
-            console.log('savedTasks is null!');
         }
     } else if (data === allProjects) {
         deserializedData = JSON.parse(localStorage.getItem("savedProjects"));
@@ -42,26 +36,20 @@ export function getFromLocalStorage(data) {
             deserializedData.forEach((item) => {
                 item.add = function() {
                     allProjects.push(item);
-                    // saveToLocalStorage(allProjects);
                 }
     
                 item.delete = function() {
                     let index = allProjects.findIndex((project) => project === item);
                     allProjects.splice(index, 1);
-                    // saveToLocalStorage(allProjects);
                 }
     
                 item.getTasks = function() {
-                    // return getFromLocalStorage(allTasks).filter(task => task.project === item.title);
                     return allTasks.filter(task => task.project === item.title);
                 }
             });
 
             data = deserializedData;
-        } else {
-            console.log('savedProjects is null!');
         }
     }
-    console.log(data);
     return data; 
 }
