@@ -40,6 +40,7 @@ export function createNewTaskForm() {
                 const optionsTitle = projectInput.appendChild(d.createElement('option'));
                 optionsTitle.selected = true;
                 optionsTitle.disabled = true;
+                optionsTitle.value = undefined;
                 optionsTitle.textContent = 'Project';
 
                 for (let i = 0; i < allProjects.length; i++) {
@@ -63,6 +64,7 @@ export function createNewTaskForm() {
                 const optionsTitle = priorityInput.appendChild(d.createElement('option'));
                 optionsTitle.selected = true;
                 optionsTitle.disabled = true;
+                optionsTitle.value = undefined;
                 optionsTitle.textContent = 'Priority';
 
                 const highPriorityOption = priorityInput.appendChild(d.createElement('option'));

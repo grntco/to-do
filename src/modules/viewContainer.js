@@ -46,22 +46,24 @@ export function createViewContainer(view) {
                     const metaContainer = taskCard.appendChild(d.createElement('ul'));
                     metaContainer.classList.add('meta-container');
 
-                    if (taskObj.priority) {
+                    if (taskObj.priority !== undefined) {
                         const priorityTag = metaContainer.appendChild(d.createElement('li'));
                         priorityTag.classList.add('meta-tag');
                         priorityTag.textContent = taskObj.priority;
                         priorityTag.classList.add(`${priorityTag.textContent.toLowerCase()}-priority`)
                     }
 
-                    if (taskObj.project) {
+                    if (taskObj.project !== undefined) {
                         const projectTag = metaContainer.appendChild(d.createElement('li'));
                         projectTag.classList.add('meta-tag');
                         projectTag.textContent = taskObj.project;
                     }
-                    
-                    const dueDateTag = metaContainer.appendChild(d.createElement('li'));
-                    dueDateTag.classList.add('meta-tag');
-                    dueDateTag.textContent = format(parseISO(taskObj.dueDate), 'PP');
+
+                    if (taskObj.dueDate) {
+                        const dueDateTag = metaContainer.appendChild(d.createElement('li'));
+                        dueDateTag.classList.add('meta-tag');
+                        dueDateTag.textContent = format(taskObj.dueDate, 'PP');
+                    }
                 })();
             } 
         })();
