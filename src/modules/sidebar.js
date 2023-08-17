@@ -55,13 +55,14 @@ export function createSidebar() {
             const btnsContainer = projectsViewListContainer.appendChild(d.createElement('div'));
             btnsContainer.classList.add('btns-container');
 
-            const savedProjects = getFromLocalStorage(allProjects);
+            // const savedProjects = getFromLocalStorage(allProjects);
+            // May need to uncomment this OUT!!!!!!!
 
-            for (let i = 0; i < savedProjects.length; i++) {
-                const btn = btnsContainer.appendChild(d.createElement('button'));
-                btn.classList.add('project-sb-btn');
-                btn.innerHTML = `<i class="fa-solid fa-list-check"></i>${savedProjects[i].title}<span>${savedProjects[i].getTasks().length}</span>`
-            }
+            // for (let i = 0; i < savedProjects.length; i++) {
+            //     const btn = btnsContainer.appendChild(d.createElement('button'));
+            //     btn.classList.add('project-sb-btn');
+            //     btn.innerHTML = `<i class="fa-solid fa-list-check"></i>${savedProjects[i].title}<span>${savedProjects[i].getTasks().length}</span>`
+            // }
         })();
     })();
 

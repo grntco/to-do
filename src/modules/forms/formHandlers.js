@@ -15,7 +15,7 @@ export function createTask() {
 
     const newTask = new Task(title, description, project, priority, dueDate);
     newTask.add();
-    saveToLocalStorage(allTasks);
+    // saveToLocalStorage(allTasks);
 
     refreshContent();
 }

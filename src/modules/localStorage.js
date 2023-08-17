@@ -10,31 +10,35 @@ export function saveToLocalStorage(data) {
 }
 
 export function getFromLocalStorage(data) {
-    let deserializedData = [];
+    let deserializedData;
 
     if (data === allTasks) {
         deserializedData = JSON.parse(localStorage.getItem("savedTasks"));
+        if (deserializedData !== null) {
+            deserializedData.forEach((item) => {
+                item.add = function() {
+                    allTasks.push(item);
+                    // saveToLocalStorage(allTasks);
+                }
+    
+                item.delete = function() {
+                    let index = allTasks.findIndex((task) => task === item);
+                    allTasks.splice(index, 1);
+                    // saveToLocalStorage(allTasks);
+                }
+    
+                // if (item.dueDate instanceof Date) {
+                item.dueDate = parseISO(item.dueDate);
+                // }
+            });
 
-        deserializedData.forEach((item) => {
-            item.add = function() {
-                allTasks.push(item);
-                // saveToLocalStorage(allTasks);
-            }
-
-            item.delete = function() {
-                let index = allTasks.findIndex((task) => task === item);
-                allTasks.splice(index, 1);
-                // saveToLocalStorage(allTasks);
-            }
-
-            // if (item.dueDate instanceof Date) {
-            item.dueDate = parseISO(item.dueDate);
-            // }
-        });
+            data = deserializedData;
+        } else {
+            console.log('savedTasks is null!');
+        }
     } else if (data === allProjects) {
         deserializedData = JSON.parse(localStorage.getItem("savedProjects"));
-
-        // if (deserializedArray.length > 0) {
+        if (deserializedData !== null) {
             deserializedData.forEach((item) => {
                 item.add = function() {
                     allProjects.push(item);
@@ -52,9 +56,12 @@ export function getFromLocalStorage(data) {
                     return allTasks.filter(task => task.project === item.title);
                 }
             });
-        // }
+
+            data = deserializedData;
+        } else {
+            console.log('savedProjects is null!');
+        }
     }
-    data = deserializedData;
-    console.log(data)
+    console.log(data);
     return data; 
 }

@@ -6,13 +6,16 @@ import { createViewContainer, removeViewContainer } from './modules/viewContaine
 import events from './modules/events';
 import { saveToLocalStorage, getFromLocalStorage } from './modules/localStorage';
 
-console.log(allProjects)
-saveToLocalStorage(allProjects);
-saveToLocalStorage(allTasks);
+// console.log(allProjects)
+// saveToLocalStorage(allProjects);
+// saveToLocalStorage(allTasks);
 // saveToLocalStorage(allTasks);
 // console.log(getFromLocalStorage(allProjects));
 
+
+saveToLocalStorage(allProjects);
 getFromLocalStorage(allProjects);
+// console.log(localStorage);
 
 // console.log(allTasks);
 // console.log(JSON.parse(localStorage.getItem('allTasks')));
