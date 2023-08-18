@@ -3,6 +3,8 @@ import { getFromLocalStorage } from "./localStorage";
 
 let allTasks = []
 
+// put the below in a better function you turd
+
 if (getFromLocalStorage(allTasks)) {
     allTasks = getFromLocalStorage(allTasks)
 } else {
@@ -65,6 +67,12 @@ weekView.getTasks = function() {
 
 let allProjects = [];
 
+if (getFromLocalStorage(allProjects)) {
+    allProjects = getFromLocalStorage(allProjects);
+} else {
+    allProjects = [];
+}
+
 class Project extends TasksView {
     constructor(_title, _description) {
         super(_title);
@@ -88,10 +96,10 @@ class Project extends TasksView {
     }
 }
 
-const newProject = new Project('Gym', 'Get swole');
-newProject.add();
-const newProject2 = new Project('Work', 'Things to fill 8 hours with');
-newProject2.add();
+// const newProject = new Project('Gym', 'Get swole');
+// newProject.add();
+// const newProject2 = new Project('Work', 'Things to fill 8 hours with');
+// newProject2.add();
 
 
 // const newTask = new Task('Write book', 'At least 50 pages', 'Gym', 'High', '2023-7-6');

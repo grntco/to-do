@@ -15,4 +15,4 @@ getFromLocalStorage(allTasks);
 
 createNav();
 createSidebar();
-createViewContainer(getFromLocalStorage(allProjects)[0]);
+createViewContainer(inboxView);
