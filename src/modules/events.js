@@ -55,6 +55,10 @@ const events = (function() {
             createTask();
         }
 
+        if (target.id === '') {
+
+        }
+
         if (target.id === 'add-project-btn') {
             createNewProjectModal();
         }

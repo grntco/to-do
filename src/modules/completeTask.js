@@ -1,4 +1,5 @@
 import { allTasks } from "./app";
+import { getFromLocalStorage, saveToLocalStorage } from "./localStorage";
 import refreshContent from "./refreshContent";
 
 export function completeTask(taskCard) {
@@ -9,7 +10,10 @@ export function completeTask(taskCard) {
 
     setTimeout(() => {
         taskObj.delete();
+        saveToLocalStorage(allTasks);
         refreshContent();
-    }, 2000)
-}
+    }, 2000);
+
+    console.log(allTasks);
+};
 
