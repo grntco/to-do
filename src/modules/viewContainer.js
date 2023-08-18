@@ -59,11 +59,9 @@ export function createViewContainer(view) {
                         projectTag.textContent = taskObj.project;
                     }
 
-                    if (taskObj.dueDate) {
-                        const dueDateTag = metaContainer.appendChild(d.createElement('li'));
-                        dueDateTag.classList.add('meta-tag');
-                        dueDateTag.textContent = format(taskObj.dueDate, 'PP');
-                    }
+                    const dueDateTag = metaContainer.appendChild(d.createElement('li'));
+                    dueDateTag.classList.add('meta-tag');
+                    dueDateTag.textContent = format(taskObj.dueDate, 'PP');
                 })();
             } 
         })();

@@ -1,7 +1,13 @@
-import { isToday, isAfter, isBefore, addDays } from "date-fns";
+import { isToday, isAfter, isBefore, addDays, startOfToday } from "date-fns";
 import { getFromLocalStorage } from "./localStorage";
 
-let allTasks = [];
+let allTasks = []
+
+if (getFromLocalStorage(allTasks)) {
+    allTasks = getFromLocalStorage(allTasks)
+} else {
+    allTasks = [];
+}
 
 class Task {
     constructor(_title, _description, _project, _priority, _dueDate) {
@@ -12,7 +18,7 @@ class Task {
         if (_dueDate) {
             this.dueDate = new Date(_dueDate.split('-'));
         } else {
-            this.dueDate = null;
+            this.dueDate = new Date(startOfToday());
         }
     }
 
@@ -88,10 +94,10 @@ const newProject2 = new Project('Work', 'Things to fill 8 hours with');
 newProject2.add();
 
 
-const newTask = new Task('Write book', 'At least 50 pages', 'Gym', 'High', '2023-7-6');
-newTask.add();
-const newTask2 = new Task('Write blog', 'At least 50 words', '', 'Medium', '2023-8-17');
-newTask2.add();
+// const newTask = new Task('Write book', 'At least 50 pages', 'Gym', 'High', '2023-7-6');
+// newTask.add();
+// const newTask2 = new Task('Write blog', 'At least 50 words', '', 'Medium', '2023-8-17');
+// newTask2.add();
 // const newTask3 = new Task('Do pullups', 'Aim for 10', 'Gym', 'Medium', '2023-6-20');
 // newTask3.add();
 // const newTask4 = new Task('Do the thing', 'this task is due tomorrow with no project', undefined, 'Low', '2023-6-21');

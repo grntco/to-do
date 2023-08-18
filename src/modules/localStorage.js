@@ -6,7 +6,6 @@ export function saveToLocalStorage(data) {
     data === allTasks ? keyName = "savedTasks" : keyName = "savedProjects";
 
     let serializedData = JSON.stringify(data);
-    // localStorage.removeItem(keyName);
     localStorage.setItem(keyName, serializedData);
 }
 

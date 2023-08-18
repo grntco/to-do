@@ -11,6 +11,8 @@ console.log(allTasks);
 
 getFromLocalStorage(allTasks);
 
+
+
 createNav();
 createSidebar();
 createViewContainer(getFromLocalStorage(allProjects)[0]);

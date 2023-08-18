@@ -1,5 +1,5 @@
 import { allTasks } from "./app";
-import { getFromLocalStorage, saveToLocalStorage } from "./localStorage";
+import { saveToLocalStorage } from "./localStorage";
 import refreshContent from "./refreshContent";
 
 export function completeTask(taskCard) {
