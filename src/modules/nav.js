@@ -18,7 +18,7 @@ export default function createNav() {
     themeBtn.innerHTML = `<i class="fa-regular fa-moon"></i>`;
 
     const profileImg = leftContainer.appendChild(d.createElement('img'));
-    profileImg.src = './profile_lofi_generator profile < 1MB.png';
+    profileImg.src = './anon_profile.jpeg';
     profileImg.alt = 'profile image';
 
     return nav;
