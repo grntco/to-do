@@ -9,7 +9,11 @@ class Task {
         this.description = _description;
         this.project = _project;
         this.priority = _priority;
-        this.dueDate = new Date(_dueDate.split('-'));
+        if (_dueDate) {
+            this.dueDate = new Date(_dueDate.split('-'));
+        } else {
+            this.dueDate = null;
+        }
     }
 
     add() {

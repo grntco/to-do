@@ -46,7 +46,7 @@ export function createViewContainer(view) {
                     const metaContainer = taskCard.appendChild(d.createElement('ul'));
                     metaContainer.classList.add('meta-container');
 
-                    if (taskObj.priority !== undefined) {
+                    if (taskObj.priority) {
                         const priorityTag = metaContainer.appendChild(d.createElement('li'));
                         priorityTag.classList.add('meta-tag');
                         priorityTag.textContent = taskObj.priority;
