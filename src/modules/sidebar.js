@@ -1,5 +1,4 @@
 import { allProjects, inboxView, todayView, weekView } from "./app";
-import { getFromLocalStorage } from "./localStorage";
 import { d, mainContainer } from "./mainContainer";
 
 export function createSidebar() {

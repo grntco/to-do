@@ -13,7 +13,5 @@ export function completeTask(taskCard) {
         saveToLocalStorage(allTasks);
         refreshContent();
     }, 2000);
-
-    console.log(allTasks);
 };
 
