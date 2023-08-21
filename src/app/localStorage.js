@@ -1,4 +1,4 @@
-import { allProjects } from "./app";
+import { allProjects } from "./project";
 import { allTasks } from "./task";
 import parseISO from 'date-fns/parseISO'
 

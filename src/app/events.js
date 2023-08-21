@@ -8,7 +8,7 @@ import createNewProjectModal from "../ui/forms/newProjectModal";
 import removeModal from "../ui/forms/removeModal";
 import { createTask, createProject, editTask } from "./formHandlers";
 
-import { allProjects, Project, inboxView, todayView, weekView } from './app';
+import { allProjects, Project, inboxView, todayView, weekView } from './project';
 import { Task, allTasks } from "./task";
 import { completeTask } from "./completeTask";
 

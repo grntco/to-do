@@ -1,4 +1,4 @@
-import { allProjects, inboxView, todayView, weekView } from "../app/app";
+import { allProjects, inboxView, todayView, weekView } from "../app/project";
 import { d, mainContainer } from "./mainContainer";
 
 export function createSidebar() {

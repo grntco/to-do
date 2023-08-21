@@ -1,5 +1,5 @@
 import './styles.css';
-import { inboxView } from './app/app';
+import { inboxView } from './app/project';
 import createNav from './ui/nav';
 import { createSidebar } from './ui/sidebar';
 import { createViewContainer } from './ui/viewContainer';

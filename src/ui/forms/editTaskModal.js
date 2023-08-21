@@ -1,4 +1,4 @@
-import { allProjects } from "../../app/app";
+import { allProjects } from "../../app/project";
 import { d, mainContainer } from "../mainContainer";
 
 export default function createEditTaskModal(taskObj) {

@@ -1,6 +1,6 @@
 // bridge between DOM and app
 import { d } from "../ui/mainContainer";
-import { Project, allProjects } from "./app";
+import { Project, allProjects } from "./project";
 import { Task, allTasks } from "./task";
 import { removeNewTaskForm } from "../ui/forms/newTaskForm";
 import removeModal from "../ui/forms/removeModal";

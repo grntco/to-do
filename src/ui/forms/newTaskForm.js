@@ -1,4 +1,4 @@
-import { allProjects } from "../../app/app";
+import { allProjects } from "../../app/project";
 import { d } from "../mainContainer";
 import { getViewContainer } from "../viewContainer";
 
