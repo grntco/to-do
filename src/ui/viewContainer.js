@@ -7,11 +7,10 @@ export function createViewContainer(view) {
     viewContainer.classList.add('view-container');
 
     const viewName = viewContainer.appendChild(d.createElement('h2'));
-    viewName.id = 'view-name'; //maybe don't need this...
+    viewName.id = 'view-name';
     viewName.textContent = view.title;
 
     const viewDescription = viewContainer.appendChild(d.createElement('p'));
-    viewDescription.id = 'view-description'; //maybe don't need this...
     viewDescription.textContent = view.description;
 
     const createTasksContainer = (function() {
@@ -27,7 +26,6 @@ export function createViewContainer(view) {
 
                 const completeBtn = taskCard.appendChild(d.createElement('button'));
                 completeBtn.classList.add('task-complete-btn');
-                // completeBtn.innerHTML = `<i class="fa-regular fa-circle"></i>`;
 
                 const createPrimaryInfo = (function() {
                     const primaryInfo = taskCard.appendChild(d.createElement('div'));

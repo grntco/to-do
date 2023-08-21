@@ -17,18 +17,14 @@ export function createSidebar() {
             const inboxViewBtn = btnsContainer.appendChild(d.createElement('button'));
             inboxViewBtn.id = 'inbox-view-btn';
             inboxViewBtn.innerHTML = `<i class="fa-solid fa-inbox"></i>${inboxView.title}<span>${inboxView.getTasks().length}</span>`
-            // Need inboxView.length
 
             const todayViewBtn = btnsContainer.appendChild(d.createElement('button'));
             todayViewBtn.id = 'today-view-btn';
             todayViewBtn.innerHTML = `<i class="fa-solid fa-calendar-day"></i>${todayView.title}<span>${todayView.getTasks().length}</span>`
-            // Need todayView.length
 
             const weekViewBtn = btnsContainer.appendChild(d.createElement('button'));
             weekViewBtn.id = 'week-view-btn';
             weekViewBtn.innerHTML = `<i class="fa-solid fa-calendar-week"></i>${weekView.title}<span>${weekView.getTasks().length}</span>`;
-            // Need weekView.length
-
         })();
     })();
 
@@ -67,10 +63,4 @@ export function createSidebar() {
 
 export function toggleSidebar() {
     d.querySelector('.sidebar').classList.toggle('collapsed');
-
-    // if (sidebar.classList.contains('collapsed')) {
-    //     sidebar.classList.remove('collapsed');
-    // } else {
-    //     sidebar.classList.add('collapsed');
-    // }
 };
