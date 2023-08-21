@@ -8,7 +8,8 @@ import createNewProjectModal from "../ui/forms/newProjectModal";
 import removeModal from "../ui/forms/removeModal";
 import { createTask, createProject, editTask } from "./formHandlers";
 
-import { allTasks, Task, allProjects, Project, inboxView, todayView, weekView } from './app';
+import { allProjects, Project, inboxView, todayView, weekView } from './app';
+import { Task, allTasks } from "./task";
 import { completeTask } from "./completeTask";
 
 const events = (function() {

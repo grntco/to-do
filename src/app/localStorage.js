@@ -1,4 +1,5 @@
-import { allTasks, allProjects } from "./app";
+import { allProjects } from "./app";
+import { allTasks } from "./task";
 import parseISO from 'date-fns/parseISO'
 
 export function saveToLocalStorage(data) {

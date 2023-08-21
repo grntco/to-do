@@ -1,4 +1,4 @@
-import { allTasks } from "./app";
+import { allTasks } from "./task";
 import { saveToLocalStorage } from "./localStorage";
 import refreshContent from "../ui/refreshContent";
 
