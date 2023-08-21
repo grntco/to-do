@@ -1,6 +1,6 @@
 import { allTasks } from "./app";
 import { saveToLocalStorage } from "./localStorage";
-import refreshContent from "./refreshContent";
+import refreshContent from "../ui/refreshContent";
 
 export function completeTask(taskCard) {
     taskCard.classList.add('completed');

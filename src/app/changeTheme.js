@@ -1,4 +1,4 @@
-import { d } from "./mainContainer"
+import { d } from "../ui/mainContainer"
 
 export default function changeTheme() {
     const body = d.querySelector('body');

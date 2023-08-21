@@ -1,12 +1,12 @@
-import { d } from "./mainContainer";
+import { d } from "../ui/mainContainer";
 import changeTheme from "./changeTheme";
-import { toggleSidebar } from "./sidebar";
-import { createViewContainer, removeViewContainer } from "./viewContainer";
-import { createNewTaskForm, removeNewTaskForm } from "./forms/newTaskForm";
-import createEditTaskModal from "./forms/editTaskModal";
-import createNewProjectModal from "./forms/newProjectModal";
-import removeModal from "./forms/removeModal";
-import { createTask, createProject, editTask } from "./forms/formHandlers";
+import { toggleSidebar } from "../ui/sidebar";
+import { createViewContainer, removeViewContainer } from "../ui/viewContainer";
+import { createNewTaskForm, removeNewTaskForm } from "../ui/forms/newTaskForm";
+import createEditTaskModal from "../ui/forms/editTaskModal";
+import createNewProjectModal from "../ui/forms/newProjectModal";
+import removeModal from "../ui/forms/removeModal";
+import { createTask, createProject, editTask } from "./formHandlers";
 
 import { allTasks, Task, allProjects, Project, inboxView, todayView, weekView } from './app';
 import { completeTask } from "./completeTask";

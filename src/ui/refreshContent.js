@@ -1,7 +1,7 @@
 import { createSidebar, toggleSidebar } from "./sidebar"
 import { createViewContainer } from "./viewContainer";
 import { d, mainContainer } from "./mainContainer";
-import { inboxView, todayView, weekView, allProjects } from "./app";
+import { inboxView, todayView, weekView, allProjects } from "../app/app";
 
 export default function refreshContent() {
     const getSidebarStatus = function() {

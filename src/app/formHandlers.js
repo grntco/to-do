@@ -1,10 +1,10 @@
 // bridge between DOM and app
-import { d } from "../mainContainer";
-import { Project, Task, allProjects, allTasks } from "../app";
-import { removeNewTaskForm } from "./newTaskForm";
-import removeModal from "./removeModal";
-import refreshContent from "../refreshContent";
-import { saveToLocalStorage } from "../localStorage";
+import { d } from "../ui/mainContainer";
+import { Project, Task, allProjects, allTasks } from "./app";
+import { removeNewTaskForm } from "../ui/forms/newTaskForm";
+import removeModal from "../ui/forms/removeModal";
+import refreshContent from "../ui/refreshContent";
+import { saveToLocalStorage } from "./localStorage";
 
 export function createTask() {
     const title = d.getElementById('task-name-input').value;
