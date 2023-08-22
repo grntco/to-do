@@ -6,21 +6,19 @@ import { createNewTaskForm } from "../ui/forms/newTaskForm";
 import createEditTaskModal from "../ui/forms/editTaskModal";
 import createNewProjectModal from "../ui/forms/newProjectModal";
 import { createTask, createProject, editTask, updateTaskIndex } from "./formHandlers";
-
 import { allProjects, inboxView, todayView, weekView } from './project';
 import { allTasks } from "./task";
 import { completeTask } from "./completeTask";
 import refreshContent from "../ui/refreshContent";
 
-const events = (function() {
+export const events = (function() {
     d.addEventListener('click', function(e) {
-        // Prevent default here prevents the cal form selector on the input[type='text'];
         const target = e.target;
 
         if (target.classList.contains('sidebar-toggle-btn')) {
             toggleSidebar();
         }
-        // could do one init/refresh here, instead of individuall in the functions, just need to choose which to do them on and group together
+
         if (target.classList.contains('theme-toggle-btn')) {
             changeTheme();
         }
@@ -54,10 +52,6 @@ const events = (function() {
         if (target.id === 'create-task-btn') {
             e.preventDefault();
             createTask();
-        }
-
-        if (target.id === '') {
-
         }
 
         if (target.id === 'add-project-btn') {
@@ -104,5 +98,3 @@ const mobileResponsiveEvents = (function() {
         };
     });
 })();
-
-export default events
