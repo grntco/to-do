@@ -58,6 +58,7 @@ export default function createEditTaskModal(taskObj) {
 
                 const optionsTitle = priorityInput.appendChild(d.createElement('option'));
                 optionsTitle.disabled = true;
+                optionsTitle.value = '';
                 optionsTitle.textContent = 'Priority';
 
                 const highPriorityOption = priorityInput.appendChild(d.createElement('option'));
@@ -72,8 +73,10 @@ export default function createEditTaskModal(taskObj) {
                 lowPriorityOption.value = 'Low';
                 lowPriorityOption.textContent = 'Low';
 
+                if (taskObj.priority) {
                 const currentPriority = [...priorityInput.children].find((option) => option.textContent === taskObj.priority);
                 currentPriority.selected = true;
+                }
             })();
 
             const dateInput = metaInputContainer.appendChild(d.createElement('input'));

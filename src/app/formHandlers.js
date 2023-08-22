@@ -20,7 +20,6 @@ export function createTask() {
         saveToLocalStorage(allTasks);
     }
 
-    // close the form?
     refreshContent();
 }
 
@@ -40,10 +39,8 @@ export function editTask() {
     const dueDate = d.getElementById('task-due-date-input').value;
 
     allTasks[taskIndex].update(title, description, project, priority, dueDate);
-
+    if (title) { saveToLocalStorage(allTasks) };
     refreshContent();
-    // removeModal();
-    // is removeModal() necessary? Why can't I just refresh the content?
 }
 
 export function createProject() {
