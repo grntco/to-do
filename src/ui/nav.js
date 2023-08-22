@@ -18,7 +18,7 @@ export default function createNav() {
     themeBtn.innerHTML = `<i class="fa-regular fa-moon"></i>`;
 
     const profileImg = leftContainer.appendChild(d.createElement('img'));
-    profileImg.src = './anon_profile.jpeg';
+    profileImg.src = './anon_profile_inverted.jpeg';
     profileImg.alt = 'profile image';
 
     return nav;

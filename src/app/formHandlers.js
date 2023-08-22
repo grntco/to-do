@@ -1,4 +1,3 @@
-// bridge between DOM and app
 import { d } from "../ui/mainContainer";
 import { Project, allProjects } from "./project";
 import { Task, allTasks } from "./task";
@@ -21,7 +20,7 @@ export function createTask() {
     refreshContent();
 }
 
-export let taskIndex = -1;
+let taskIndex = -1;
 
 export function updateTaskIndex(taskObj) {
     taskIndex = allTasks.indexOf(taskObj);
@@ -49,5 +48,6 @@ export function createProject() {
         newProject.add();
         saveToLocalStorage(allProjects);
     }
+
     refreshContent();
 }

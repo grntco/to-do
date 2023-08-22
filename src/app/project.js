@@ -46,9 +46,4 @@ class Project extends TasksView {
     }
 }
 
-// const newProject = new Project('Gym', 'Get swole');
-// newProject.add();
-// const newProject2 = new Project('Work', 'Things to fill 8 hours with');
-// newProject2.add();
-
 export { inboxView, todayView, weekView, allProjects, Project }

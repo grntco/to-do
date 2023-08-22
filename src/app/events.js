@@ -5,7 +5,7 @@ import { createViewContainer, removeViewContainer } from "../ui/viewContainer";
 import { createNewTaskForm } from "../ui/forms/newTaskForm";
 import createEditTaskModal from "../ui/forms/editTaskModal";
 import createNewProjectModal from "../ui/forms/newProjectModal";
-import { createTask, createProject, editTask, getTaskIndex, storeTaskObj, taskIndex, updateTaskIndex } from "./formHandlers";
+import { createTask, createProject, editTask, updateTaskIndex } from "./formHandlers";
 
 import { allProjects, inboxView, todayView, weekView } from './project';
 import { allTasks } from "./task";
@@ -77,9 +77,7 @@ const events = (function() {
         if (target.classList.contains('task')) {
             const taskCard = target;
             const taskObj = allTasks.find((task) => task.title === taskCard.querySelector('.name').textContent);
-            console.log(taskIndex);
             updateTaskIndex(taskObj);
-            console.log(taskIndex);
             createEditTaskModal(taskObj);
         }
 
