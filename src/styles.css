@@ -426,7 +426,6 @@ form .create-btn:hover {
     align-items: center;
     justify-content: center;
     background-color: var(--secondary-bg-color);
-    opacity: 0.8;
 }
 
 .modal form {
@@ -441,9 +440,30 @@ form .create-btn:hover {
     background-color: var(--primary-bg-color);
     border: 1px solid var(--primary-border-color);
     box-shadow: 2px 4px 10px rgba(0, 0, 0, 0.1);
+    /* opacity: 1; */
 }
 
 .modal form h3 {
     padding-bottom: 8px;
     border-bottom: 1px solid var(--primary-border-color);
+    text-align: center;
+}
+
+/* Mobile */
+
+@media screen and (max-width: 767px) {
+    .sidebar {
+        position: absolute;
+        z-index: 999;
+    }
+
+    .task {
+        align-items: center;
+    }
+
+    .task .meta-container {
+        flex-direction: column;
+        align-items: end;
+
+    }
 }

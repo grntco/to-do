@@ -1,6 +1,6 @@
 import { d } from "../ui/mainContainer";
 import changeTheme from "./changeTheme";
-import { toggleSidebar } from "../ui/sidebar";
+import { sidebarCollapse, toggleSidebar } from "../ui/sidebar";
 import { createViewContainer, removeViewContainer } from "../ui/viewContainer";
 import { createNewTaskForm } from "../ui/forms/newTaskForm";
 import createEditTaskModal from "../ui/forms/editTaskModal";
@@ -89,6 +89,19 @@ const events = (function() {
         if (target.classList.contains('task-complete-btn')) {
             completeTask(target.parentElement);
         }
+    });
+})();
+
+const mobileResponsiveEvents = (function() {
+    window.addEventListener('resize', function() {
+        if (window.innerWidth < 767) {
+            sidebarCollapse();
+        };
+    })
+    window.addEventListener('load', function() {
+        if (window.innerWidth < 767) {
+            sidebarCollapse();
+        };
     });
 })();
 

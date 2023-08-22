@@ -2,11 +2,15 @@ import { allProjects } from "../../app/project";
 import { d, mainContainer } from "../mainContainer";
 
 export default function createEditTaskModal(taskObj) {
+
     const editTaskModal = mainContainer.appendChild(d.createElement('div'));
     editTaskModal.classList.add('edit-task-modal', 'modal');
 
     const createForm = (function() {
         const form = editTaskModal.appendChild(d.createElement('form'));
+
+        const h3 = form.appendChild(d.createElement('h3'));
+        h3.textContent = 'Edit Task';
 
         const createMainInfoFieldset = (function() {
             const fieldset = form.appendChild(d.createElement('fieldset'));

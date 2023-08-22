@@ -64,3 +64,7 @@ export function createSidebar() {
 export function toggleSidebar() {
     d.querySelector('.sidebar').classList.toggle('collapsed');
 };
+
+export function sidebarCollapse() {
+    d.querySelector('.sidebar').classList.add('collapsed');
+}
