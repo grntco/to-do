@@ -1,4 +1,5 @@
 import { d, app, mainContainer } from "./mainContainer";
+import Profile from '../assets/images/anon_profile_inverted.jpeg';
 
 export default function createNav() {
     const nav = app.insertBefore(d.createElement('nav'), mainContainer);
@@ -22,7 +23,7 @@ export default function createNav() {
     profileImgWrapper.target = '_blank';
 
     const profileImg = profileImgWrapper.appendChild(d.createElement('img'));
-    profileImg.src = './anon_profile_inverted.jpeg';
+    profileImg.src = Profile;
     profileImg.alt = 'profile image';
 
     return nav;
