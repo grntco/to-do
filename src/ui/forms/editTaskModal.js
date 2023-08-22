@@ -92,7 +92,7 @@ export default function createEditTaskModal(taskObj) {
             btnsContainer.classList.add('btns-container');
 
             const cancelBtn = btnsContainer.appendChild(d.createElement('button'));
-            cancelBtn.classList.add('cancel-btn', 'cancel-modal-btn');
+            cancelBtn.classList.add('cancel-btn');
             cancelBtn.textContent = 'Cancel';
 
             const createBtn = btnsContainer.appendChild(d.createElement('button'));

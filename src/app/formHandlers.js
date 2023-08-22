@@ -2,8 +2,6 @@
 import { d } from "../ui/mainContainer";
 import { Project, allProjects } from "./project";
 import { Task, allTasks } from "./task";
-import { removeNewTaskForm } from "../ui/forms/newTaskForm";
-import removeModal from "../ui/forms/removeModal";
 import refreshContent from "../ui/refreshContent";
 import { saveToLocalStorage } from "./localStorage";
 
@@ -23,8 +21,6 @@ export function createTask() {
     refreshContent();
 }
 
-
-
 export let taskIndex = -1;
 
 export function updateTaskIndex(taskObj) {
@@ -39,7 +35,8 @@ export function editTask() {
     const dueDate = d.getElementById('task-due-date-input').value;
 
     allTasks[taskIndex].update(title, description, project, priority, dueDate);
-    if (title) { saveToLocalStorage(allTasks) };
+    if (title) saveToLocalStorage(allTasks);
+
     refreshContent();
 }
 
@@ -52,6 +49,5 @@ export function createProject() {
         newProject.add();
         saveToLocalStorage(allProjects);
     }
-    removeModal();
     refreshContent();
 }

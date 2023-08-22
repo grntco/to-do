@@ -5,6 +5,7 @@ import { getViewContainer } from "../viewContainer";
 export function createNewTaskForm() {
     const addTaskBtn = d.getElementById('add-task-btn');
     addTaskBtn.disabled = true;
+    // returns to false when content is refreshed
 
     const newTaskForm = getViewContainer().insertBefore(d.createElement('div'), d.getElementById('add-task-btn'));
     newTaskForm.classList.add('new-task-form-container');
@@ -91,7 +92,7 @@ export function createNewTaskForm() {
             btnsContainer.classList.add('btns-container');
 
             const cancelBtn = btnsContainer.appendChild(d.createElement('button'));
-            cancelBtn.classList.add('cancel-btn', 'cancel-form-btn');
+            cancelBtn.classList.add('cancel-btn');
             cancelBtn.textContent = 'Cancel';
 
             const createBtn = btnsContainer.appendChild(d.createElement('button'));
@@ -102,10 +103,4 @@ export function createNewTaskForm() {
     })();
 
     return newTaskForm;
-}
-
-export function removeNewTaskForm() {
-    getViewContainer().removeChild(d.querySelector('.new-task-form-container'));
-    const addTaskBtn = d.getElementById('add-task-btn');
-    addTaskBtn.disabled = false;
 }

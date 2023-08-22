@@ -2,15 +2,15 @@ import { d } from "../ui/mainContainer";
 import changeTheme from "./changeTheme";
 import { toggleSidebar } from "../ui/sidebar";
 import { createViewContainer, removeViewContainer } from "../ui/viewContainer";
-import { createNewTaskForm, removeNewTaskForm } from "../ui/forms/newTaskForm";
+import { createNewTaskForm } from "../ui/forms/newTaskForm";
 import createEditTaskModal from "../ui/forms/editTaskModal";
 import createNewProjectModal from "../ui/forms/newProjectModal";
-import removeModal from "../ui/forms/removeModal";
 import { createTask, createProject, editTask, getTaskIndex, storeTaskObj, taskIndex, updateTaskIndex } from "./formHandlers";
 
 import { allProjects, inboxView, todayView, weekView } from './project';
 import { allTasks } from "./task";
 import { completeTask } from "./completeTask";
+import refreshContent from "../ui/refreshContent";
 
 const events = (function() {
     d.addEventListener('click', function(e) {
@@ -69,14 +69,9 @@ const events = (function() {
             createProject();
         }
 
-        if (target.classList.contains('cancel-modal-btn')) {
+        if (target.classList.contains('cancel-btn')) {
             e.preventDefault();
-            removeModal();
-        }
-
-        if (target.classList.contains('cancel-form-btn')) {
-            e.preventDefault();
-            removeNewTaskForm();
+            refreshContent();
         }
 
         if (target.classList.contains('task')) {
