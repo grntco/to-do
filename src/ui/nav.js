@@ -17,7 +17,11 @@ export default function createNav() {
     themeBtn.classList.add('icon-btn', 'theme-toggle-btn');
     themeBtn.innerHTML = `<i class="fa-regular fa-moon"></i>`;
 
-    const profileImg = leftContainer.appendChild(d.createElement('img'));
+    const profileImgWrapper = leftContainer.appendChild(d.createElement('a'));
+    profileImgWrapper.href = 'https://github.com/grntco';
+    profileImgWrapper.target = '_blank';
+
+    const profileImg = profileImgWrapper.appendChild(d.createElement('img'));
     profileImg.src = './anon_profile_inverted.jpeg';
     profileImg.alt = 'profile image';
 
