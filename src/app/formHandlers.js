@@ -24,16 +24,25 @@ export function createTask() {
     refreshContent();
 }
 
-export function getTaskIndex(target) {
-    const taskCard = target;
-    const taskObj = allTasks.find((task) => task.title === taskCard.querySelector('.name').textContent);
-    return allTasks.indexOf(taskObj);
+
+
+export let taskIndex = -1;
+
+export function updateTaskIndex(taskObj) {
+    taskIndex = allTasks.indexOf(taskObj);
 }
 
-export function editTask(taskObj) {
-    
-    console.log(index);
-    removeModal();
+export function editTask() {
+    const title = d.getElementById('task-name-input').value;
+    const description = d.getElementById('task-description-input').textContent;
+    const project = d.getElementById('task-project-input').value;
+    const priority = d.getElementById('task-priority-input').value;
+    const dueDate = d.getElementById('task-due-date-input').value;
+
+    allTasks[taskIndex].update(title, description, project, priority, dueDate);
+
+    refreshContent();
+    // removeModal();
     // is removeModal() necessary? Why can't I just refresh the content?
 }
 

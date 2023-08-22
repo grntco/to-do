@@ -1,6 +1,6 @@
 import { allProjects } from "./project";
 import { allTasks } from "./task";
-import parseISO from 'date-fns/parseISO'
+import { parseISO, startOfToday } from 'date-fns'
 
 export function saveToLocalStorage(data) {
     let keyName = '';
@@ -27,6 +27,14 @@ export function getFromLocalStorage(data) {
                 }
     
                 item.dueDate = parseISO(item.dueDate);
+
+                item.update = function(newTitle, newDescription, newProject, newPriority, newDueDate) {
+                    item.title = newTitle;
+                    item.description = newDescription;
+                    item.project = newProject;
+                    item.priority = newPriority;
+                    item.dueDate = newDueDate ? new Date(newDueDate.split('-')) : new Date(startOfToday());
+                };
             });
 
             data = deserializedData;

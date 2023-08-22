@@ -6,7 +6,7 @@ import { createNewTaskForm, removeNewTaskForm } from "../ui/forms/newTaskForm";
 import createEditTaskModal from "../ui/forms/editTaskModal";
 import createNewProjectModal from "../ui/forms/newProjectModal";
 import removeModal from "../ui/forms/removeModal";
-import { createTask, createProject, editTask, getTaskIndex } from "./formHandlers";
+import { createTask, createProject, editTask, getTaskIndex, storeTaskObj, taskIndex, updateTaskIndex } from "./formHandlers";
 
 import { allProjects, inboxView, todayView, weekView } from './project';
 import { allTasks } from "./task";
@@ -69,13 +69,6 @@ const events = (function() {
             createProject();
         }
 
-        if (target.id === 'done-edit-task-btn') {
-            e.preventDefault()
-            // const taskObj = allTasks.find((task) => task.title === d.querySelector('.task-name-input').textContent);
-            console.log(taskObj);
-            editTask(taskObj);
-        }
-
         if (target.classList.contains('cancel-modal-btn')) {
             e.preventDefault();
             removeModal();
@@ -87,10 +80,17 @@ const events = (function() {
         }
 
         if (target.classList.contains('task')) {
-            // const taskCard = target;
-            // const taskObj = allTasks.find((task) => task.title === taskCard.querySelector('.name').textContent);
-            let taskIndex = getTaskIndex(target);
-            createEditTaskModal(allTasks[taskIndex]);
+            const taskCard = target;
+            const taskObj = allTasks.find((task) => task.title === taskCard.querySelector('.name').textContent);
+            console.log(taskIndex);
+            updateTaskIndex(taskObj);
+            console.log(taskIndex);
+            createEditTaskModal(taskObj);
+        }
+
+        if (target.id === 'done-edit-task-btn') {
+            e.preventDefault()
+            editTask();
         }
 
         if (target.classList.contains('task-complete-btn')) {

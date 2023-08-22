@@ -20,6 +20,7 @@ export default function createEditTaskModal(taskObj) {
             titleInput.autocomplete = 'off';
 
             const descriptionInput = fieldset.appendChild(d.createElement('div'));
+            descriptionInput.id = 'task-description-input';
             descriptionInput.innerHTML = `<span class="textarea" role="textbox" contenteditable>${taskObj.description}</span>`;
         })();
 
@@ -29,12 +30,13 @@ export default function createEditTaskModal(taskObj) {
 
             const createProjectInput = (function() {
                 const projectInput = metaInputContainer.appendChild(d.createElement('select'));
-                projectInput.name = 'project-input';
-                projectInput.id = 'project-input';
+                projectInput.name = 'task-project-input';
+                projectInput.id = 'task-project-input';
 
                 const optionsTitle = projectInput.appendChild(d.createElement('option'));
                 optionsTitle.disabled = true;
                 // optionsTitle.selected = true;
+                optionsTitle.value = '';
                 optionsTitle.textContent = 'Project';
 
                 for (let i = 0; i < allProjects.length; i++) {
@@ -51,23 +53,23 @@ export default function createEditTaskModal(taskObj) {
 
             const createPriorityInput = (function() {
                 const priorityInput = metaInputContainer.appendChild(d.createElement('select'));
-                priorityInput.name = 'priority-input';
-                priorityInput.id = 'priority-input';
+                priorityInput.name = 'task-priority-input';
+                priorityInput.id = 'task-priority-input';
 
                 const optionsTitle = priorityInput.appendChild(d.createElement('option'));
                 optionsTitle.disabled = true;
                 optionsTitle.textContent = 'Priority';
 
                 const highPriorityOption = priorityInput.appendChild(d.createElement('option'));
-                highPriorityOption.value = 'high';
+                highPriorityOption.value = 'High';
                 highPriorityOption.textContent = 'High';
 
                 const mediumPriorityOption = priorityInput.appendChild(d.createElement('option'));
-                mediumPriorityOption.value = 'medium';
+                mediumPriorityOption.value = 'Medium';
                 mediumPriorityOption.textContent = 'Medium';
 
                 const lowPriorityOption = priorityInput.appendChild(d.createElement('option'));
-                lowPriorityOption.value = 'low';
+                lowPriorityOption.value = 'Low';
                 lowPriorityOption.textContent = 'Low';
 
                 const currentPriority = [...priorityInput.children].find((option) => option.textContent === taskObj.priority);
@@ -76,8 +78,8 @@ export default function createEditTaskModal(taskObj) {
 
             const dateInput = metaInputContainer.appendChild(d.createElement('input'));
             dateInput.type = 'date';
-            dateInput.name = 'due-date-input';
-            dateInput.id = 'due-date-input';
+            dateInput.name = 'task-due-date-input';
+            dateInput.id = 'task-due-date-input';
             // dateInput.innerHTML = taskObj.dueDate;
             // doesn't look like there's a way to add the currently selected date as the date input placeholder
         })();
