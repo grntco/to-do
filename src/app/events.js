@@ -86,7 +86,7 @@ export const events = (function() {
     });
 })();
 
-const mobileResponsiveEvents = (function() {
+const mobileEvents = (function() {
     window.addEventListener('resize', function() {
         if (window.innerWidth < 767) {
             sidebarCollapse();

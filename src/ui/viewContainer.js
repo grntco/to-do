@@ -1,14 +1,29 @@
 import format from "date-fns/format";
 import parseISO from 'date-fns/parseISO'
 import { d, mainContainer } from "./mainContainer";
+import { allProjects } from "../app/project";
 
 export function createViewContainer(view) {
     const viewContainer = mainContainer.appendChild(d.createElement('div'));
     viewContainer.classList.add('view-container');
 
-    const viewName = viewContainer.appendChild(d.createElement('h2'));
+    const viewName = d.createElement('h2');
     viewName.id = 'view-name';
     viewName.textContent = view.title;
+
+    if (allProjects.includes(view)) {
+        const viewNameContainer = viewContainer.appendChild(d.createElement('div'));
+        viewNameContainer.classList.add('view-name-container');
+
+        viewNameContainer.appendChild(viewName);
+
+        const deleteBtn = viewNameContainer.appendChild(d.createElement('button'));
+        deleteBtn.classList.add('icon-btn', 'delete-project-btn');
+        deleteBtn.innerHTML = '<i class="fa-regular fa-trash-can"></i>';
+        deleteBtn.title = 'Delete Project';
+    } else {
+        viewContainer.appendChild(viewName);
+    }
 
     const viewDescription = viewContainer.appendChild(d.createElement('p'));
     viewDescription.textContent = view.description;
