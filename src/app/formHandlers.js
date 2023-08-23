@@ -55,12 +55,17 @@ export function createProject() {
 
 export function deleteProject() {
     const projectName = d.getElementById('view-name').textContent;
-
     const projectObj = allProjects.find((project) => project.title === projectName);
+
+    allTasks.forEach((task) => {
+        if (task.project === projectObj.title) {
+            task.project = '';
+        }
+    });
+    saveToLocalStorage(allTasks);
 
     projectObj.delete();
     saveToLocalStorage(allProjects);
 
-    // createViewContainer(inboxView);
     refreshContent();
 };
