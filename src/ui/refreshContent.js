@@ -38,5 +38,9 @@ export default function refreshContent() {
         toggleSidebar();
     }
 
-    createViewContainer(currentView);
-}
+    if (currentView) {
+        createViewContainer(currentView);
+    } else {
+        createViewContainer(inboxView);
+    }
+};

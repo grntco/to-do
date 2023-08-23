@@ -36,10 +36,10 @@ class Project extends TasksView {
         allProjects.push(this);
     }
 
-    // delete() {
-    //     let index = allProjects.findIndex((project) => project === this);
-    //     allProjects.splice(index, 1);
-    // }
+    delete() {
+        let index = allProjects.findIndex((project) => project === this);
+        allProjects.splice(index, 1);
+    }
 
     getTasks() {
         return allTasks.filter(task => task.project === this.title);

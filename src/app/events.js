@@ -5,7 +5,7 @@ import { createViewContainer, removeViewContainer } from "../ui/viewContainer";
 import { createNewTaskForm } from "../ui/forms/newTaskForm";
 import createEditTaskModal from "../ui/forms/editTaskModal";
 import createNewProjectModal from "../ui/forms/newProjectModal";
-import { createTask, createProject, editTask, updateTaskIndex } from "./formHandlers";
+import { createTask, createProject, editTask, updateTaskIndex, deleteProject } from "./formHandlers";
 import { allProjects, inboxView, todayView, weekView } from './project';
 import { allTasks } from "./task";
 import { completeTask } from "./completeTask";
@@ -61,6 +61,11 @@ export const events = (function() {
         if (target.id === 'create-project-btn') {
             e.preventDefault();
             createProject();
+        }
+
+        if (target.classList.contains('delete-project-btn')) {
+            deleteProject();
+            // createViewContainer(inboxView);
         }
 
         if (target.classList.contains('cancel-btn')) {

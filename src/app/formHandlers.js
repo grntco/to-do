@@ -1,8 +1,9 @@
 import { d } from "../ui/mainContainer";
-import { Project, allProjects } from "./project";
+import { Project, allProjects, inboxView } from "./project";
 import { Task, allTasks } from "./task";
 import refreshContent from "../ui/refreshContent";
 import { saveToLocalStorage } from "./localStorage";
+import { createViewContainer } from "../ui/viewContainer";
 
 export function createTask() {
     const title = d.getElementById('task-name-input').value;
@@ -24,7 +25,7 @@ let taskIndex = -1;
 
 export function updateTaskIndex(taskObj) {
     taskIndex = allTasks.indexOf(taskObj);
-}
+};
 
 export function editTask() {
     const title = d.getElementById('task-name-input').value;
@@ -37,7 +38,7 @@ export function editTask() {
     if (title) saveToLocalStorage(allTasks);
 
     refreshContent();
-}
+};
 
 export function createProject() {
     const title = d.getElementById('project-name-input').value;
@@ -50,4 +51,16 @@ export function createProject() {
     }
 
     refreshContent();
-}
+};
+
+export function deleteProject() {
+    const projectName = d.getElementById('view-name').textContent;
+
+    const projectObj = allProjects.find((project) => project.title === projectName);
+
+    projectObj.delete();
+    saveToLocalStorage(allProjects);
+
+    // createViewContainer(inboxView);
+    refreshContent();
+};
