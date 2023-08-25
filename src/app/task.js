@@ -31,7 +31,4 @@ class Task {
     };
 }
 
-// const newTask = new Task('Write book', 'At least 50 pages', 'Gym', 'High', '2023-7-6');
-// newTask.add();
-
 export { Task, allTasks };
