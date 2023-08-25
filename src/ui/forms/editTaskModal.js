@@ -84,20 +84,9 @@ export default function createEditTaskModal(taskObj) {
                 }
             })();
 
-            // const dateInput = metaInputContainer.appendChild(d.createElement('input'));
-            // dateInput.type = 'date';
-            // dateInput.name = 'task-due-date-input';
-            // dateInput.id = 'task-due-date-input';
-
-
-
             const dateInputBtn = metaInputContainer.appendChild(d.createElement('button'));
             dateInputBtn.textContent = format(taskObj.dueDate, 'P');
             dateInputBtn.id = 'task-due-date-input-btn';
-            
-            // dateInput.name = 'task-due-date-input';
-            // dateInput.id = 'task-due-date-input';
-
         })();
 
         const createBtnsContainer = (function() {

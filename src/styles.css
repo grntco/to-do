@@ -361,8 +361,13 @@ form select {
     padding: 2px 4px;
 }
 
-form input[type="date"] {
+form input[type="date"]  {
     padding: 4px 6px;
+}
+
+#task-due-date-input-btn {
+    padding: 5px 6px;
+    text-align: left;
 }
 
 form select:focus, form input[type="date"]:focus {
