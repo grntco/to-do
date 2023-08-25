@@ -4,6 +4,7 @@ import { Task, allTasks } from "./task";
 import refreshContent from "../ui/refreshContent";
 import { saveToLocalStorage } from "./localStorage";
 import { createViewContainer } from "../ui/viewContainer";
+import startOfDay from "date-fns/startOfDay";
 
 export function createTask() {
     const title = d.getElementById('task-name-input').value;
@@ -33,12 +34,22 @@ export function editTask() {
     const project = d.getElementById('task-project-input').value;
     const priority = d.getElementById('task-priority-input').value;
     const dueDate = d.getElementById('task-due-date-input').value;
+    // const dueDate = d.getElementById('task-due-date-input').value || startOfDay();
+
 
     allTasks[taskIndex].update(title, description, project, priority, dueDate);
     if (title) saveToLocalStorage(allTasks);
 
     refreshContent();
 };
+
+export function switchToDateInput() {
+    d.getElementById('task-due-date-input-btn').remove();
+    const dateInput = d.querySelector('.meta-input-container').appendChild(d.createElement('input'));
+    dateInput.type = 'date';
+    dateInput.name = 'task-due-date-input';
+    dateInput.id = 'task-due-date-input';
+}
 
 export function createProject() {
     const title = d.getElementById('project-name-input').value;

@@ -85,14 +85,6 @@ export function createNewTaskForm() {
             dateInput.type = 'date';
             dateInput.name = 'task-due-date-input';
             dateInput.id = 'task-due-date-input';
-
-            // const dateInput = metaInputContainer.appendChild(d.createElement('input'));
-            // dateInput.type = 'text';
-            // dateInput.placeholder = '01/01/1999'
-            // dateInput.onfocus = "(this.type = 'date')";
-            // // dateInput.onblur = "(this.type='text')";
-            // dateInput.name = 'task-due-date-input';
-            // dateInput.id = 'task-due-date-input';
         })();
 
         const createBtnsContainer = (function() {

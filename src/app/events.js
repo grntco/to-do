@@ -5,7 +5,7 @@ import { createViewContainer, removeViewContainer } from "../ui/viewContainer";
 import { createNewTaskForm } from "../ui/forms/newTaskForm";
 import createEditTaskModal from "../ui/forms/editTaskModal";
 import createNewProjectModal from "../ui/forms/newProjectModal";
-import { createTask, createProject, editTask, updateTaskIndex, deleteProject } from "./formHandlers";
+import { createTask, createProject, editTask, switchToDateInput, updateTaskIndex, deleteProject } from "./formHandlers";
 import { allProjects, inboxView, todayView, weekView } from './project';
 import { allTasks } from "./task";
 import { completeTask } from "./completeTask";
@@ -77,6 +77,11 @@ export const events = (function() {
             const taskObj = allTasks.find((task) => task.title === taskCard.querySelector('.name').textContent);
             updateTaskIndex(taskObj);
             createEditTaskModal(taskObj);
+        }
+
+        if (target.id === 'task-due-date-input-btn') {
+            e.preventDefault();
+            switchToDateInput();
         }
 
         if (target.id === 'done-edit-task-btn') {
