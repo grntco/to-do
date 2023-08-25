@@ -130,6 +130,7 @@ nav img {
     padding: 48px;
     height: 100%;
     min-width: 336px;
+    max-width: 336px;
     background-color: var(--secondary-bg-color);
 }
 
