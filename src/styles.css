@@ -171,7 +171,7 @@ nav img {
     border-bottom: 1px solid var(--primary-border-color);
 }
 
-.sidebar .projects-heading .icon-btn { /* Probs change to id here since only one */
+.sidebar .projects-heading .icon-btn {
     margin-left: auto;
 }
 
@@ -424,6 +424,7 @@ form .create-btn:hover {
 
 /* Modals */
 .modal {
+    z-index: 999;
     position: absolute;
     top: 0;
     bottom: 0;
@@ -436,7 +437,6 @@ form .create-btn:hover {
 }
 
 .modal form {
-    /* z-index: 999; */
     display: flex;
     flex-direction: column;
     gap: 8px;
@@ -447,7 +447,6 @@ form .create-btn:hover {
     background-color: var(--primary-bg-color);
     border: 1px solid var(--primary-border-color);
     box-shadow: 2px 4px 10px rgba(0, 0, 0, 0.1);
-    /* opacity: 1; */
 }
 
 .modal form h3 {
@@ -461,7 +460,7 @@ form .create-btn:hover {
 @media screen and (max-width: 767px) {
     .sidebar {
         position: absolute;
-        z-index: 999;
+        z-index: 1;
     }
 
     .task {
@@ -471,6 +470,5 @@ form .create-btn:hover {
     .task .meta-container {
         flex-direction: column;
         align-items: end;
-
     }
 }

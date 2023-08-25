@@ -65,7 +65,6 @@ export const events = (function() {
 
         if (target.classList.contains('delete-project-btn')) {
             deleteProject();
-            // createViewContainer(inboxView);
         }
 
         if (target.classList.contains('cancel-btn')) {
