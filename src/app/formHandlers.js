@@ -1,10 +1,8 @@
 import { d } from "../ui/mainContainer";
-import { Project, allProjects, inboxView } from "./project";
+import { Project, allProjects } from "./project";
 import { Task, allTasks } from "./task";
 import refreshContent from "../ui/refreshContent";
 import { saveToLocalStorage } from "./localStorage";
-import { createViewContainer } from "../ui/viewContainer";
-import startOfDay from "date-fns/startOfDay";
 
 export function createTask() {
     const title = d.getElementById('task-name-input').value;
@@ -30,7 +28,7 @@ export function updateTaskIndex(taskObj) {
 
 export function editTask() {
     if (d.getElementById('task-due-date-input-btn')) switchToDateInput();
-    
+
     const title = d.getElementById('task-name-input').value;
     const description = d.getElementById('task-description-input').textContent;
     const project = d.getElementById('task-project-input').value;
@@ -48,7 +46,6 @@ export function switchToDateInput() {
     d.getElementById('task-due-date-input-btn').remove();
     const dateInput = d.querySelector('.meta-input-container').appendChild(d.createElement('input'));
     dateInput.type = 'date';
-    dateInput.name = 'task-due-date-input';
     dateInput.id = 'task-due-date-input';
 }
 

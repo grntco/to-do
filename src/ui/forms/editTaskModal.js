@@ -18,7 +18,6 @@ export default function createEditTaskModal(taskObj) {
 
             const titleInput = fieldset.appendChild(d.createElement('input'));
             titleInput.type = 'text';
-            titleInput.name = 'task-name-input';
             titleInput.id = 'task-name-input';
             titleInput.placeholder = 'Task name'
             titleInput.value = taskObj.title;
@@ -35,7 +34,6 @@ export default function createEditTaskModal(taskObj) {
 
             const createProjectInput = (function() {
                 const projectInput = metaInputContainer.appendChild(d.createElement('select'));
-                projectInput.name = 'task-project-input';
                 projectInput.id = 'task-project-input';
 
                 const optionsTitle = projectInput.appendChild(d.createElement('option'));
@@ -58,7 +56,6 @@ export default function createEditTaskModal(taskObj) {
 
             const createPriorityInput = (function() {
                 const priorityInput = metaInputContainer.appendChild(d.createElement('select'));
-                priorityInput.name = 'task-priority-input';
                 priorityInput.id = 'task-priority-input';
 
                 const optionsTitle = priorityInput.appendChild(d.createElement('option'));

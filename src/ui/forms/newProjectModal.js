@@ -16,7 +16,6 @@ export default function createNewProjectModal() {
 
             const titleInput = fieldset.appendChild(d.createElement('input'));
             titleInput.type = 'text';
-            titleInput.name = 'project-name-input';
             titleInput.id = 'project-name-input';
             titleInput.placeholder = 'Name';
             titleInput.autocomplete = 'off';

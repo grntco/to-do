@@ -5,7 +5,6 @@ import { getViewContainer } from "../viewContainer";
 export function createNewTaskForm() {
     const addTaskBtn = d.getElementById('add-task-btn');
     addTaskBtn.disabled = true;
-    // returns to false when content is refreshed
 
     const newTaskForm = getViewContainer().insertBefore(d.createElement('div'), d.getElementById('add-task-btn'));
     newTaskForm.classList.add('new-task-form-container');
@@ -18,8 +17,6 @@ export function createNewTaskForm() {
 
             const titleInput = fieldset.appendChild(d.createElement('input'));
             titleInput.type = 'text';
-            titleInput.name = 'task-name-input';
-            // Really don't think I need names on inputs. Is this just if you have labels?
             titleInput.id = 'task-name-input';
             titleInput.placeholder = 'Task name';
             titleInput.autocomplete = 'off';
@@ -35,7 +32,6 @@ export function createNewTaskForm() {
 
             const createProjectInput = (function() {
                 const projectInput = metaInputContainer.appendChild(d.createElement('select'));
-                projectInput.name = 'task-project-input';
                 projectInput.id = 'task-project-input';
 
                 const optionsTitle = projectInput.appendChild(d.createElement('option'));
@@ -59,7 +55,6 @@ export function createNewTaskForm() {
 
             const createPriorityInput = (function() {
                 const priorityInput = metaInputContainer.appendChild(d.createElement('select'));
-                priorityInput.name = 'task-priority-input';
                 priorityInput.id = 'task-priority-input';
 
                 const optionsTitle = priorityInput.appendChild(d.createElement('option'));
@@ -83,7 +78,6 @@ export function createNewTaskForm() {
 
             const dateInput = metaInputContainer.appendChild(d.createElement('input'));
             dateInput.type = 'date';
-            dateInput.name = 'task-due-date-input';
             dateInput.id = 'task-due-date-input';
         })();
 
