@@ -29,12 +29,13 @@ export function updateTaskIndex(taskObj) {
 };
 
 export function editTask() {
+    if (d.getElementById('task-due-date-input-btn')) switchToDateInput();
+    
     const title = d.getElementById('task-name-input').value;
     const description = d.getElementById('task-description-input').textContent;
     const project = d.getElementById('task-project-input').value;
     const priority = d.getElementById('task-priority-input').value;
     const dueDate = d.getElementById('task-due-date-input').value;
-    // const dueDate = d.getElementById('task-due-date-input').value || startOfDay();
 
 
     allTasks[taskIndex].update(title, description, project, priority, dueDate);
