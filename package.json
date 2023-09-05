@@ -6,18 +6,22 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "watch": "webpack --watch",
-    "build": "webpack"
+    "build": "webpack",
+    "deploy-demo": "git subtree push --prefix dist origin gh-pages"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "devDependencies": {
+    "@babel/core": "^7.22.15",
+    "@babel/preset-env": "^7.22.15",
+    "babel-loader": "^9.1.3",
     "css-loader": "^6.8.1",
     "date-fns": "^2.30.0",
     "file-loader": "^6.2.0",
     "style-loader": "^3.3.3",
     "url-loader": "^4.1.1",
-    "webpack": "^5.85.0",
+    "webpack": "^5.88.2",
     "webpack-cli": "^5.1.1"
   }
 }
