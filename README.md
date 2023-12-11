@@ -1,5 +1,5 @@
 # Todoit
-This is a project for The Odin Project's JavaScript course to create a to-do list web applicaiton.
+This is a project for The Odin Project's JavaScript course to create a to-do list web application.
 
 I used HTML, CSS, and Vanilla JS.
 
